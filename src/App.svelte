@@ -2,11 +2,25 @@
   import logo from './assets/svelte.png'
   import Counter from './lib/Counter.svelte'
   import Payform from './lib/Payform.svelte'
+  import ScrollBeer from './lib/ScrollBeer.svelte'
+  import BasketBeer from './lib/BasketBeer.svelte'
+  import Login from './lib/Loginphone.svelte'
+  import CreateAccount from './lib/CreateAccount.svelte'
   let types = ['API', 'GODknows']
   let beers = ['Heiniken', 'Karlovacko', 'Pan']
 </script>
 
 <main>
+  <section class="login hideLog">
+    
+    <div class="hideLog">
+    <Login />
+  </div>
+
+<div class="hidden">
+    <CreateAccount />
+  </div>
+  </section>
 <section class="selection">
   <div>
     <span></span>
@@ -22,60 +36,26 @@
   <li>{type}</li>
   {/each}
 </ul>
-<h2>Your Order</h2>
+<h2 class="hidden">Your Order</h2>
   </div>
 
   <div class="scroll_container">
     <ul>
-      {#each beers as beer}
-      <li>
-        <img src="{logo}" alt="Thecompany logo instead of beer logo">
-        <p>{beer}</p>
-        <p>Currently <span></span> on tap</p>
-        <button>V More information about {beer} V</button>
-        <p>The more information about {beer}</p>
-        <p>This beer is a type</p>
-        <p>14% <br> alchohol</p>
-        <div>
-          <span>+</span>
-          <span>0</span>
-          <span>-</span>
-        </div>
-        <p>Price: </p>
-
-      </li>
-      {/each}
+      <ScrollBeer />
     </ul>
   </div>
 </section>
 
 <section class="basket">
   <div class="order">
-    <h2>Order</h2>
-    <div>
-      {#each beers as beer}
-      <div>
-        <img>
-        <div>
-          <p>{beer}</p>
-          <div>
-            <span>+</span>
-            <span>0</span>
-            <span>-</span>
-          </div>
-          <p>Price:</p>
-        </div>
-      </div>
-      {/each}
-    </div>
-    <p>Total..............</p>
-    <button>Proceed to checkout</button>
-  </div>
+  <BasketBeer />
+</div>
 
+<div class="payment hidden">
   <Payform />
+</div>
+  
 </section>
-
-  <Counter />
 </main>
 
 <style>
@@ -84,16 +64,41 @@
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
+  .hidden {
+    display: none;
+  }
+
+  .hideLog {
+    display: none;
+  }
+
+  .scroll_container {
+    max-width: max-content;
+    overflow: scroll;
+  }
+
   main {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
     padding: 1em;
     margin: 0 auto;
   }
 
-  img {
-    height: 16rem;
-    width: 16rem;
+  section {
+    width: 50%;
   }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+   
+  }
+
 
   h1 {
     color: #ff3e00;
