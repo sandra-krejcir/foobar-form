@@ -1,4 +1,4 @@
-<div class="payment">
+
     <div>
       <span>arrow</span>
       <p>Edit Order</p>
@@ -25,4 +25,3 @@
       <p>Total................</p>
       <button type="submit"> Complete Order</button>
     </form>
-  </div>
