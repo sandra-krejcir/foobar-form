@@ -8,6 +8,7 @@
   import CreateAccount from './lib/CreateAccount.svelte'
   let types = ['API', 'GODknows']
   let beers = ['Heiniken', 'Karlovacko', 'Pan']
+  let paymentClicked = false
 </script>
 
 <main>
@@ -39,19 +40,21 @@
 <h2 class="hidden">Your Order</h2>
   </div>
 
-  <div class="scroll_container">
-    <ul>
+  <div class:scroll_container = "{!paymentClicked}">
+    <ul class:doFlex = "{!paymentClicked}" class:makeGrid = "{paymentClicked}" >
       <ScrollBeer />
     </ul>
   </div>
 </section>
 
 <section class="basket">
-  <div class="order">
-  <BasketBeer />
+  <div class="order" class:hidden = "{paymentClicked}">
+  <BasketBeer>
+    <button on:click="{() => paymentClicked = !paymentClicked}">Proceed to checkout</button>
+  </BasketBeer>
 </div>
 
-<div class="payment hidden">
+<div class="payment" class:hidden = "{!paymentClicked}">
   <Payform />
 </div>
   
@@ -77,6 +80,19 @@
     overflow: scroll;
   }
 
+  .doFlex {
+    display: flex;
+    flex-direction: row;
+  }
+
+.makeGrid {
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
   main {
     display: flex;
     flex-direction: row;
@@ -94,8 +110,6 @@
   }
   ul {
     list-style: none;
-    display: flex;
-    flex-direction: row;
    
   }
 

@@ -24,5 +24,5 @@
         {/each}
     </div>
     <p>Total..............</p>
-    <button>Proceed to checkout</button>
+    <slot></slot>
 
