@@ -3,9 +3,7 @@
     import { onMount } from 'svelte';
 
 export let beers = []
-export let readMore = {
-    
-}
+export let readMore = false
 
 
 onMount(async () => {
@@ -16,7 +14,7 @@ onMount(async () => {
 let targetChild
 function moreInfo(event) {
   readMore = !readMore
-  targetChild.classList.remove("hidden")
+  targetChild.classList.toggle("hidden")
 }
 
 </script>
