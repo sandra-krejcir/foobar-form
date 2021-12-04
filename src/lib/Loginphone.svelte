@@ -7,7 +7,7 @@
         <label for="phoneNumber">Phone Number</label>
         <input type="password" minlength="8" id="password" name="password">
         <label for="password">Password</label>
-        <button type="submit"">Log in</button>
+        <button type="submit">Log in</button>
       </form>
       <slot></slot>
     </div>
