@@ -9,7 +9,6 @@
         <label for="password">Password</label>
         <button type="submit">Log in</button>
       </form>
-      <p>Create account</p>
-      <button type="button">Order as Guest</button>
+      <slot></slot>
     </div>
   

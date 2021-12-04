@@ -3,51 +3,62 @@
   import Counter from './lib/Counter.svelte'
   import Payform from './lib/Payform.svelte'
   import ScrollBeer from './lib/ScrollBeer.svelte'
+  import OrderBeers from './lib/OrderBeers.svelte'
   import BasketBeer from './lib/BasketBeer.svelte'
   import Login from './lib/Loginphone.svelte'
   import CreateAccount from './lib/CreateAccount.svelte'
   let types = ['API', 'GODknows']
   let beers = ['Heiniken', 'Karlovacko', 'Pan']
   let paymentClicked = false
+  let creatingOn = false
+  let asGuest = false
 </script>
 
-<main>
-  <section class="login hideLog">
+<main class:flex_main = "{!paymentClicked}" class:flex_reverse = "{paymentClicked}">
+  <section class="login hideLog" class:hideRis = "{asGuest}" >
     
-    <div class="hideLog">
-    <Login />
+    <div class="hideLog" class:hideRis = "{creatingOn}">
+    <Login>
+      <p on:click="{() => creatingOn = !creatingOn}">Create account</p>
+      <button type="button" on:click="{() => asGuest = !asGuest}">Order as Guest</button>
+    </Login>
   </div>
 
-<div class="hidden">
+<div class:hidden = "{!creatingOn}">
     <CreateAccount />
   </div>
   </section>
-<section class="selection">
+
+<section class="selection" class:hideRis = "{!asGuest}">
   <div>
     <span></span>
     <img src="{logo}" alt="The company's logo">
 <span></span>
-<ul class="firstFilter">
+<ul class="firstFilter" class:hidden = "{paymentClicked}">
   <li>Full selection</li>
   <li>On today's tap</li>
 </ul>
-<ul class="secondFilter">
+<ul class="secondFilter" class:hidden = "{paymentClicked}">
   <li>All</li>
   {#each types as type}
   <li>{type}</li>
   {/each}
 </ul>
-<h2 class="hidden">Your Order</h2>
+<h2 class:hidden = "{!paymentClicked}">Your Order</h2>
   </div>
 
   <div class:scroll_container = "{!paymentClicked}">
-    <ul class:doFlex = "{!paymentClicked}" class:makeGrid = "{paymentClicked}" >
+    <ul class:doFlex = "{!paymentClicked}" class:hidden = "{paymentClicked}" >
       <ScrollBeer />
+    </ul>
+
+    <ul class:makeGrid = "{paymentClicked}" class:hidden = "{!paymentClicked}">
+      <OrderBeers />
     </ul>
   </div>
 </section>
 
-<section class="basket">
+<section class="basket" class:hideRis = "{!asGuest}">
   <div class="order" class:hidden = "{paymentClicked}">
   <BasketBeer>
     <button on:click="{() => paymentClicked = !paymentClicked}">Proceed to checkout</button>
@@ -75,6 +86,9 @@
     display: none;
   }
 
+  section {
+    max-width: 50%;
+  }
   .scroll_container {
     max-width: max-content;
     overflow: scroll;
@@ -94,14 +108,18 @@ grid-row-gap: 0px;
 }
 
   main {
-    display: flex;
-    flex-direction: row;
     padding: 1em;
     margin: 0 auto;
   }
 
-  section {
-    width: 50%;
+  .flex_main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .flex_reverse {
+    display: flex;
+    flex-direction: row;
   }
 
   form {
@@ -125,12 +143,11 @@ grid-row-gap: 0px;
   }
 
   p {
-    max-width: 14rem;
     margin: 1rem auto;
     line-height: 1.35;
   }
 
-  @media (min-width: 480px) {
+  @media (max-width: 480px) {
     h1 {
       max-width: none;
     }
@@ -138,5 +155,22 @@ grid-row-gap: 0px;
     p {
       max-width: none;
     }
+
+    .flex_main {
+      flex-direction: column;
+    }
+
+    .flex_reverse {
+      flex-direction: column-reverse
+    }
+
+    .hideLog {
+    display: unset;
+  }
+
+  .hideRis {
+    display: none;
+  }
+
   }
 </style>
