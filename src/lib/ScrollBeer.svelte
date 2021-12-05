@@ -1,125 +1,196 @@
 <script>
-    import logo from './beerImg/svelte.png'
-    import { onMount } from 'svelte';
+  import logo from "./beerImg/elhefe.png";
+  import { onMount } from "svelte";
 
-export let beers = []
-export let readMore = false
+  export let beers = [];
+  export let readMore = false;
 
-const CART = {
-  KEY: "beerbasket",
-  contents: [],
-  init() {
-    let _contents = localStorage.getItem(CART.KEY);
-    if (_contents) {
-      CART.contents = JSON.parse(_contents);
-    }
-    CART.sync();
-  },
+  const CART = {
+    KEY: "beerbasket",
+    contents: [],
+    init() {
+      let _contents = localStorage.getItem(CART.KEY);
+      if (_contents) {
+        CART.contents = JSON.parse(_contents);
+      }
+      CART.sync();
+    },
 
-  sync() {
-    let _cart = JSON.stringify(CART.contents);
-    localStorage.setItem(CART.KEY, _cart);
-  },
+    sync() {
+      let _cart = JSON.stringify(CART.contents);
+      localStorage.setItem(CART.KEY, _cart);
+    },
 
-  add(obj) {
-    const index = CART.contents.findIndex((element) => element.name == obj.name);
-    if (index == -1) {
-      console.log(obj);
-      obj.qty = 1;
+    add(obj) {
+      const index = CART.contents.findIndex(
+        (element) => element.name == obj.name
+      );
+      if (index == -1) {
+        console.log(obj);
+        obj.qty = 1;
+        console.log(CART.contents);
+        CART.contents.push(obj);
+      } else {
+        CART.contents[index].qty += 1;
+      }
+
       console.log(CART.contents);
-      CART.contents.push(obj);
-    } else {
-      CART.contents[index].qty += 1;
-    }
+      this.sync();
+    },
 
-    console.log(CART.contents);
-    this.sync();
-  },
+    minusOne(obj) {
+      const productQty = CART.contents.find(
+        (element) => element.name == obj.name
+      ).qty;
 
-  minusOne(obj) {
-    const productQty = CART.contents.find((element) => element.name == obj.name).qty;
+      if (productQty > 1) {
+        const indexObj = CART.contents.find(
+          (element) => element.name == obj.name
+        );
+        indexObj.qty--;
+        console.log(indexObj);
+        CART.update(indexObj);
+      }
+    },
 
-    if (productQty > 1) {
-      const indexObj = CART.contents.find((element) => element.name == obj.name);
-      indexObj.qty--;
-      console.log(indexObj);
-      CART.update(indexObj);
-    }
-  },
+    update(obj) {
+      const index = CART.contents.findIndex(
+        (element) => element.name == obj.name
+      );
+      if (obj.qty === 0) {
+        CART.contents.splice(index, 1);
+      } else {
+        CART.contents[index].qty = obj.qty;
+      }
+      CART.sync();
+    },
+  };
 
-  update(obj) {
-    const index = CART.contents.findIndex((element) => element.name == obj.name);
-    if (obj.qty === 0) {
-      CART.contents.splice(index, 1);
-    } else {
-      CART.contents[index].qty = obj.qty;
-    }
-    CART.sync();
-  },
-};
+  CART.init();
 
-CART.init();
-
-
-
-onMount(async () => {
+  onMount(async () => {
     const res = await fetch(`https://foobar-databar.herokuapp.com/beertypes`);
     beers = await res.json();
-});
+  });
 
-let targetChild
-function moreInfo(event) {
-  readMore = !readMore
-  targetChild.classList.toggle("hidden")
-}
-
+  let targetChild;
+  function moreInfo(event) {
+    readMore = !readMore;
+    targetChild.classList.toggle("hidden");
+  }
 </script>
 
 {#each beers as beer (beer.name)}
-      <li>
-        <img src="{logo}" alt="beer logo">
-        <p>{beer.name}</p>
-        <p>Currently <span></span> on tap</p>
-        <button
-	on:click={moreInfo}>V More information about {beer.name} V</button>
-        <div class="hidden" bind:this={targetChild}>
-            <h4>AROMA</h4>
-            <p>{beer.description.aroma}</p>
-            <h4>FLAVOR</h4>
-            <p>{beer.description.flavor}</p>
-            <h4>IMPRESSION</h4>
-            <p>{beer.description.overallImpression}</p> 
-        </div>
-        <p>This beer is a {beer.category}</p>
-        <p>{beer.alc}%<br> alchohol</p>
-        <div>
-          <span on:click= {() => {
+  <div class="beer">
+    <li>
+      <img src={logo} alt="beer logo" />
+      <h2>{beer.name}</h2>
+      <div class="tap_container">
+        <p>Currently</p>
+        <img class="tap_icon" src="/src/lib/icons/tap.png" alt="tap icon" />
+        <p>On the Tap</p>
+      </div>
+      <button on:click={moreInfo}>More information about {beer.name}</button>
+      <div class="hidden" bind:this={targetChild}>
+        <h4>AROMA</h4>
+        <p>{beer.description.aroma}</p>
+        <h4>FLAVOR</h4>
+        <p>{beer.description.flavor}</p>
+        <h4>IMPRESSION</h4>
+        <p>{beer.description.overallImpression}</p>
+      </div>
+      <p>This beer is a {beer.category}</p>
+      <p class="procent">{beer.alc}%</p>
+      <p>Alchohol</p>
+      <div>
+        <span
+          on:click={() => {
             CART.add({
               name: beer.name,
               category: beer.category,
               price: beer.price,
               logo: beer.logo,
             });
-          }}>+</span>
-          <span>0</span>
-          <span on:click= {() =>{CART.minusOne(beer)}}>-</span>
-        </div>
-        <p>Price: </p>
+          }}>+</span
+        >
+        <span class="amount">0</span>
+        <span
+          on:click={() => {
+            CART.minusOne(beer);
+          }}>-</span
+        >
+      </div>
+      <p>$</p>
+    </li>
+  </div>
+{/each}
 
-      </li>
-      {/each}
+<style>
+  /*SANDRA*/
+  .hidden {
+    display: none;
+  }
 
-      <style>
-          .hidden {
-              display:none
-          }
+  li {
+    text-align: center;
+    margin-left: 5vw;
+  }
 
-      li {
-         text-align: center;
-          margin-left: 5vw;
-      }
+  p {
+    max-width: 120rem;
+  }
+  /*SANDRA*/
 
-      p {
-          max-width: 120rem ;
-      }
-      </style>
+  /*EMILY*/
+  .beer {
+    /* scroll-snap-align: start; */
+    margin-top: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  img {
+    width: 10rem;
+  }
+
+  h2 {
+    margin: 0;
+    margin-top: 0.5rem;
+  }
+
+  .tap_container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .tap_icon {
+    width: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  button {
+    background: rgba(255, 0, 0, 0);
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    text-transform: capitalize;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0.5rem;
+  }
+
+  .procent {
+    font-size: 3rem;
+    font-family: "Playfair Display", serif;
+  }
+
+  .amount {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  /*EMILY*/
+</style>

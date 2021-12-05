@@ -41,7 +41,8 @@
   <section class="selection" class:hideRis={!asGuest}>
     <div>
       <span />
-      <img src={logo} alt="The company's logo" />
+      <!-- <img src={logo} alt="The company's logo" /> -->
+      <h1 class="logo">FooBar</h1>
       <span />
       <ul class="firstFilter" class:hidden={paymentClicked}>
         <li>Full selection</li>
@@ -65,6 +66,7 @@
         <OrderBeers />
       </ul>
     </div>
+    <p class="nav_tekst_type1">Edit order</p>
   </section>
 
   <section class="basket" class:hideRis={!asGuest}>
@@ -98,12 +100,13 @@
     display: none;
   }
 
-  section {
+  /* section {
     max-width: 50%;
-  }
+  } */
   .scroll_container {
-    max-width: max-content;
+    /* max-width: max-content; */
     overflow: scroll;
+    /* scroll-snap-type: y mandatory; */
   }
 
   .doFlex {
@@ -119,10 +122,10 @@
     grid-row-gap: 0px;
   }
 
-  main {
+  /* main {
     padding: 1em;
     margin: 0 auto;
-  }
+  } */
 
   .flex_main {
     display: flex;
@@ -134,15 +137,15 @@
     flex-direction: row;
   }
 
-  form {
+  /* form {
     display: flex;
     flex-direction: column;
-  }
+  } */
   ul {
     list-style: none;
   }
 
-  h1 {
+  /* h1 {
     color: #ff3e00;
     text-transform: uppercase;
     font-size: 4rem;
@@ -150,12 +153,12 @@
     line-height: 1.1;
     margin: 2rem auto;
     max-width: 14rem;
-  }
+  } */
 
-  p {
+  /* p {
     margin: 1rem auto;
     line-height: 1.35;
-  }
+  } */
 
   @media (max-width: 480px) {
     h1 {
@@ -187,9 +190,53 @@
 
   /*EMILY*/
 
+  /*LOGIN*/
   .login p {
     text-align: center;
   }
+
+  /*LOGIN*/
+
+  /*SELECTION*/
+
+  .selection {
+    background: radial-gradient(
+      circle,
+      rgba(158, 30, 30, 1) 0%,
+      rgba(41, 20, 0, 1) 85%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    /* min-height: 100%; */
+  }
+
+  .selection h1 {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 6.5rem;
+    margin-right: 6.5rem;
+  }
+
+  .firstFilter,
+  .secondFilter {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav_tekst_type1 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  /*SELECTION*/
+
+  /*BASKET*/
+
+  .basket {
+    background: #fef8e9;
+  }
+
+  /*BASKET*/
 
   /*EMILY*/
 </style>

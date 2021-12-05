@@ -30,7 +30,7 @@
 <style>
   .login {
     margin: 0 auto;
-    max-width: 65%;
+    max-width: 71%;
     display: grid;
     justify-items: center;
   }
