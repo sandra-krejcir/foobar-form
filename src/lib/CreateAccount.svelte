@@ -17,7 +17,7 @@
         <label for="cardExp">Expires</label>
         <input type="text" minlength="3" maxlength="3" name="cardCvc" id="cardCvc" placeholder='mm/yy'>
         <label for="cardCvc">CVC</label>
-      </div>
+      </div> 
       <br>
       <input type="checkbox"  id="newsletter" name="newsletter"> I would like to recieve updates and newsletters.
       <br>

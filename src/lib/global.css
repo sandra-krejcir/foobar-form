@@ -1,0 +1,105 @@
+body {
+  background: radial-gradient(
+    circle,
+    rgba(158, 30, 30, 1) 0%,
+    rgba(41, 20, 0, 1) 85%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+/*FONTS*/
+h1 {
+  font-family: "Hello Paris Serif";
+  src: url("fonts/HelloParisSerif.woff2") format("woff2"),
+    url("fonts/HelloParisSerif.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  color: #f0e5c6;
+  font-size: 2rem;
+}
+
+.logo {
+  background-image: radial-gradient(
+    circle,
+    rgba(70, 100, 51, 1) 0%,
+    rgba(41, 20, 0, 1) 85%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  padding: 0.8rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border: 1px solid #f0e5c6;
+  z-index: 100;
+  text-align: center;
+  padding-bottom: 0.3rem;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  color: #f0e5c6;
+  text-align: center;
+  font-size: 2rem;
+}
+
+p,
+label {
+  font-family: "Abel Regular", sans-serif;
+  color: #f0e5c6;
+  font-size: 1rem;
+}
+/*FONTS*/
+
+/*BUTTON*/
+
+button {
+  background-image: radial-gradient(
+    circle,
+    rgba(70, 100, 51, 1) 0%,
+    rgba(41, 20, 0, 1) 85%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  padding: 0.8rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border: 1px solid #f0e5c6;
+  text-align: center;
+  padding-bottom: 0.3rem;
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase;
+  font-weight: 100;
+  color: #f0e5c6;
+  font-size: 0.8rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  white-space: nowrap;
+  text-align: center;
+  margin: 2rem;
+}
+
+/*BUTTON*/
+
+/*FORM*/
+
+label {
+  display: block;
+}
+
+input {
+  display: block;
+  background-color: #f0e5c600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border: 1px solid #f0e5c6;
+  color: #f0e5c6;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #f0e5c6;
+}
+
+/*FORM*/
