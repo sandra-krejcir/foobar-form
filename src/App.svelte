@@ -253,5 +253,19 @@
 
   /*PAYMENT*/
 
+  /*ORDER BEERS*/
+
+  .makeGrid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 3rem;
+    grid-column-gap: 0;
+    padding: 1rem;
+  }
+
+  /*ORDER BEERS*/
+
   /*EMILY*/
 </style>

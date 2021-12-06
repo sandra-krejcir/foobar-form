@@ -34,7 +34,8 @@ h1 {
   padding-bottom: 0.3rem;
 }
 
-h2 {
+h2,
+h4 {
   font-family: "Playfair Display", serif;
   text-transform: uppercase;
   font-weight: 100;
@@ -43,6 +44,9 @@ h2 {
   font-size: 2rem;
 }
 
+h4 {
+  font-size: 1rem;
+}
 p,
 label,
 li {
