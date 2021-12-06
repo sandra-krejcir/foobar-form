@@ -2,7 +2,7 @@
   import style from "./lib/global.css";
   import logo from "./assets/svelte.png";
   import Counter from "./lib/Counter.svelte";
-  import Payform from "./lib/Payform.svelte";
+  import Payform from "./lib/ThePayform.svelte";
   import ScrollBeer from "./lib/ScrollBeer.svelte";
   import OrderBeers from "./lib/OrderBeers.svelte";
   import BasketBeer from "./lib/BasketBeer.svelte";
