@@ -1,7 +1,9 @@
 <script>
+
   const CART = {
   KEY: "beerbasket",
   contents: [],
+  completeOrder: [],
   init() {
     let _contents = localStorage.getItem(CART.KEY);
     if (_contents) {
@@ -19,23 +21,33 @@
     const index = CART.contents.findIndex((element) => element.name == obj.name);
     if (index == -1) {
       console.log(obj);
-      obj.qty = 1;
+      obj.amount = 1;
       console.log(CART.contents);
       CART.contents.push(obj);
+      const order = {
+      "name": "",
+      "amount": "",
+  }
+      order.name = obj.name;
+      order.amount = obj.amount;
+     CART.completeOrder.push(order);
+      console.log(CART.completeOrder)
     } else {
-      CART.contents[index].qty += 1;
+      CART.contents[index].amount += 1;
+      CART.completeOrder[index].amount += 1;
     }
 
     console.log(CART.contents);
     this.sync();
+    this.init();
   },
 
   minusOne(obj) {
-    const productQty = CART.contents.find((element) => element.name == obj.name).qty;
+    const productQty = CART.contents.find((element) => element.name == obj.name).amount;
 
     if (productQty > 1) {
       const indexObj = CART.contents.find((element) => element.name == obj.name);
-      indexObj.qty--;
+      indexObj.amount--;
       console.log(indexObj);
       CART.update(indexObj);
     }
@@ -43,10 +55,10 @@
 
   update(obj) {
     const index = CART.contents.findIndex((element) => element.name == obj.name);
-    if (obj.qty === 0) {
+    if (obj.amount === 0) {
       CART.contents.splice(index, 1);
     } else {
-      CART.contents[index].qty = obj.qty;
+      CART.contents[index].amount = obj.amount;
     }
     CART.sync();
   },
@@ -54,7 +66,10 @@
 
 CART.init();
 
-let beers = CART.contents
+let content = CART.contents
+$: beers = content
+
+
 </script>
 
 <style>
@@ -74,10 +89,11 @@ let beers = CART.contents
                   name: beer.name,
                   category: beer.category,
                   price: beer.price,
-                  logo: beer.logo,
+                  logo: beer.label,
                 });
+                CART.init();
               }}>+</span>
-              <span>0</span>
+              <span>{beer.amount}</span>
               <span on:click= {() =>{CART.minusOne(beer)}}>-</span>
             </div>
             <p>Price:</p>
