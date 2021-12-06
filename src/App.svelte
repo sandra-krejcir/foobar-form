@@ -234,9 +234,24 @@
 
   .basket {
     background: #fef8e9;
+    /* display: flex;
+    justify-content: center; */
+  }
+
+  .basket button {
+    margin-left: 4rem;
   }
 
   /*BASKET*/
+
+  /*PAYMENT*/
+
+  /* .payment {
+    display: flex;
+    justify-content: center;
+  } */
+
+  /*PAYMENT*/
 
   /*EMILY*/
 </style>

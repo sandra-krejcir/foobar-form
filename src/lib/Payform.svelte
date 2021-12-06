@@ -1,27 +1,178 @@
-
-    <div>
-      <span>arrow</span>
-      <p>Edit Order</p>
-    </div>
-    <h2>Payment Details</h2>
-    <form>
-      <button type="button">Pay in person</button>
-      <button type="button">MobilePay</button>
-      <p>or</p>
-      <input type="text" minlength="2" name="cardHolder" id="cardHolder" placeholder="John Doe">
-      <label for="cardHolder">Card Holder</label>
+<div>
+  <!-- <span>arrow</span> -->
+  <p class="nav_tekst_type2">Edit Order</p>
+</div>
+<h2>Payment Details</h2>
+<form>
+  <div class="button_conatiner">
+    <button type="button">Pay in person</button>
+    <button type="button">MobilePay</button>
+  </div>
+  <p>Or</p>
+  <div>
+    <input
+      type="text"
+      minlength="2"
+      name="cardHolder"
+      id="cardHolder"
+      placeholder="John Doe"
+    />
+    <label for="cardHolder">Card Holder</label>
+    <div class="card_info">
       <div>
-        <input type="text" minlength="20" maxlength="20" name="cardNumber" id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX">
+        <input
+          type="text"
+          minlength="20"
+          maxlength="20"
+          name="cardNumber"
+          id="cardNumber"
+          placeholder="XXXX-XXXX-XXXX-XXXX"
+        />
         <label for="cardNumber">Card Number</label>
-        <input type="text" minlength="5" maxlength="5" name="cardExp" id="cardExp" placeholder="mm/yy">
+      </div>
+      <div>
+        <input
+          type="text"
+          minlength="5"
+          maxlength="5"
+          name="cardExp"
+          id="cardExp"
+          placeholder="mm/yy"
+        />
         <label for="cardExp">Expires</label>
-        <input type="text" minlength="3" maxlength="3" name="cardCvc" id="cardCvc" placeholder='mm/yy'>
+      </div>
+      <div>
+        <input
+          type="text"
+          minlength="3"
+          maxlength="3"
+          name="cardCvc"
+          id="cardCvc"
+          placeholder="000"
+        />
         <label for="cardCvc">CVC</label>
       </div>
-      <input type="text" minlength="15" name="phoneNumber" id="phoneNumber" placeholder="+45 XX XX XX XX">
-      <label for="phoneNumber">Phone Number</label>
-      <br>
-      <input type="checkbox"  id="terms" name="terms"> I Agree to the Terms and Conditions.
-      <p>Total................</p>
-      <button type="submit"> Complete Order</button>
-    </form>
+    </div>
+    <input
+      type="text"
+      minlength="15"
+      name="phoneNumber"
+      id="phoneNumber"
+      placeholder="+45 XX XX XX XX"
+    />
+    <label for="phoneNumber">Phone Number</label>
+    <p class="recept">You receive your recept via a Text</p>
+    <div class="terms_container">
+      <input type="checkbox" id="terms" name="terms" />
+      <p class="terms">I Agree to the Terms and Conditions.</p>
+    </div>
+  </div>
+  <div class="total">
+    <p>Total: $</p>
+    <div class="line" />
+  </div>
+  <button type="submit"> Complete Order</button>
+</form>
+
+<style>
+  h2,
+  p {
+    color: #801b16;
+    text-align: center;
+  }
+
+  .nav_tekst_type2 {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  .button_conatiner {
+    display: grid;
+    justify-content: center;
+  }
+
+  button[type="button"] {
+    background: rgba(255, 0, 0, 0);
+    color: #801b16;
+    border: 1px solid #801b16;
+    border-radius: 10rem;
+    margin: 0.5rem;
+    width: 15rem;
+  }
+
+  form {
+    display: grid;
+    justify-content: center;
+  }
+
+  .card_info {
+    display: grid;
+    grid-template-columns: 12rem 4rem 2.7rem;
+  }
+
+  input {
+    border-color: #801b16;
+    color: #801b16;
+  }
+
+  #cardNumber {
+    width: 11rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+
+  #cardExp {
+    width: 3rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+
+  #cardCvc {
+    width: 1.7rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+
+  #cardHolder,
+  #phoneNumber {
+    width: 16.5rem;
+  }
+
+  label {
+    color: #801b16;
+  }
+
+  input::placeholder {
+    color: #801b16;
+  }
+
+  .recept {
+    text-align: start;
+    margin-top: 0;
+  }
+
+  .terms_container {
+    display: flex;
+    align-items: center;
+  }
+
+  .terms {
+    font-size: 1rem;
+  }
+
+  .total {
+    display: grid;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .total p {
+    margin-bottom: 0;
+  }
+
+  .line {
+    border-bottom: 1px solid #801b16;
+    width: 5rem;
+  }
+</style>

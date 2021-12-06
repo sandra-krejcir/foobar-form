@@ -65,6 +65,7 @@
   let beers = CART.contents;
 </script>
 
+<p class="nav_tekst_type2">Add more Beer</p>
 <h2>Order</h2>
 <div>
   {#each beers as beer}
@@ -103,7 +104,12 @@
     </div>
   {/each}
 </div>
-<p>Total..............</p>
+<div class="total">
+  <p>Total</p>
+  <div class="line" />
+  <p>$</p>
+</div>
+
 <slot />
 
 <style>
@@ -161,5 +167,21 @@
   .line {
     border-bottom: 1px solid #801b16;
     width: 5rem;
+  }
+
+  .total {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+  }
+
+  .total > * {
+    margin-bottom: 0;
+  }
+
+  .nav_tekst_type2 {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
   }
 </style>
