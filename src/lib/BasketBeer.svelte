@@ -1,38 +1,103 @@
 <script>
   const CART = {
-    KEY: "beerbasket",
+    KEYONE: "beerbasket",
+    KEYTWO: "orderbasket",
     contents: [],
+    completeOrder: [],
     init() {
-      let _contents = localStorage.getItem(CART.KEY);
+      let _contents = localStorage.getItem(CART.KEYONE);
+      let _orderContents = localStorage.getItem(CART.KEYTWO);
       if (_contents) {
         CART.contents = JSON.parse(_contents);
+      }
+
+      if (_orderContents) {
+        CART.completeOrder = JSON.parse(_orderContents);
       }
       CART.sync();
     },
 
     sync() {
       let _cart = JSON.stringify(CART.contents);
-      localStorage.setItem(CART.KEY, _cart);
+      let _order = JSON.stringify(CART.completeOrder);
+      localStorage.setItem(CART.KEYONE, _cart);
+      localStorage.setItem(CART.KEYTWO, _order);
     },
 
     add(obj) {
       const index = CART.contents.findIndex(
         (element) => element.name == obj.name
       );
+      const orderIndex = CART.completeOrder.findIndex(
+        (element) => element.name == obj.name
+      );
       if (index == -1) {
         console.log(obj);
-        obj.qty = 1;
+        obj.amount = 1;
         console.log(CART.contents);
         CART.contents.push(obj);
+        const order = {
+          name: "",
+          amount: "",
+        };
+        order.name = obj.name;
+        order.amount = obj.amount;
+        CART.completeOrder.push(order);
+        console.log(CART.completeOrder);
       } else {
-        CART.contents[index].qty += 1;
+        CART.contents[index].amount += 1;
+        CART.completeOrder[orderIndex].amount += 1;
       }
 
       console.log(CART.contents);
       this.sync();
+      this.init();
     },
 
     minusOne(obj) {
+      const productQty = CART.contents.find(
+        (element) => element.name == obj.name
+      ).amount;
+
+      if (productQty > 1) {
+        const indexObj = CART.contents.find(
+          (element) => element.name == obj.name
+        );
+        const indexOrd = CART.completeOrder.find(
+          (element) => element.name == obj.name
+        );
+
+        indexObj.amount--;
+        indexOrd.amount--;
+        console.log(indexObj);
+        CART.update(indexObj);
+      }
+    },
+
+    update(obj) {
+      const index = CART.contents.findIndex(
+        (element) => element.name == obj.name
+      );
+      const indexOrd = CART.completeOrder.find(
+        (element) => element.name == obj.name
+      );
+      if (obj.amount === 0) {
+        CART.contents.splice(index, 1);
+        CART.completeOrder.splice(indexOrd, 1);
+      } else {
+        CART.contents[index].amount = obj.amount;
+      }
+      CART.sync();
+    },
+  };
+
+  CART.init();
+
+  let content = CART.contents;
+  $: beers = content;
+</script>
+
+<!-- minusOne(obj) {
       const productQty = CART.contents.find(
         (element) => element.name == obj.name
       ).qty;
@@ -62,8 +127,8 @@
 
   CART.init();
 
-  let beers = CART.contents;
-</script>
+  let beers = CART.contents; -->
+<!-- </script> -->
 
 <p class="nav_tekst_type2">Add more Beer</p>
 <h2>Order</h2>
@@ -82,11 +147,12 @@
                   name: beer.name,
                   category: beer.category,
                   price: beer.price,
-                  logo: beer.logo,
+                  logo: beer.label,
                 });
+                CART.init();
               }}>+</span
             >
-            <span class="amount">0</span>
+            <span class="amount">{beer.amount}</span>
             <span
               class="box"
               on:click={() => {
@@ -94,14 +160,16 @@
               }}>-</span
             >
           </div>
-        </div>
-        <div class="line_it_up">
           <p>Price:</p>
-          <div class="line" />
-          <p>$</p>
         </div>
       </div>
+      <div class="line_it_up">
+        <p>Price:</p>
+        <div class="line" />
+        <p>$</p>
+      </div>
     </div>
+    <!-- </div> -->
   {/each}
 </div>
 <div class="total">
