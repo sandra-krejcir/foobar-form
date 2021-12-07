@@ -26,8 +26,6 @@
   <li>
     <img src="" alt="beer logo" />
     <p>{beer.name}</p>
-    <p>Currently <span /> on tap</p>
-    <p>This beer is a type</p>
     <div>
       <span>{beer.amount}</span>
     </div>

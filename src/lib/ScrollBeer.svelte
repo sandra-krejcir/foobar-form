@@ -223,5 +223,11 @@
     margin-right: 3rem;
   }
 
+  @media only screen and (min-width: 600px) {
+    img {
+      width: 25rem;
+    }
+  }
+
   /*EMILY*/
 </style>

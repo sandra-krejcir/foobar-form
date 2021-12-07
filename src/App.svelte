@@ -267,5 +267,20 @@
 
   /*ORDER BEERS*/
 
+  /*RESPONSIVE*/
+
+  @media only screen and (min-width: 600px) {
+    .selection {
+      max-width: 75%;
+    }
+
+    .logo {
+      margin-left: 26rem !important;
+      margin-right: 26rem !important;
+    }
+  }
+
+  /*RESPONSIVE*/
+
   /*EMILY*/
 </style>

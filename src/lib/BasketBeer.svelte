@@ -132,7 +132,7 @@
 
 <p class="nav_tekst_type2">Add more Beer</p>
 <h2>Order</h2>
-<div>
+<div class="scroll">
   {#each beers as beer}
     <div class="item_container">
       <img src="/src/lib/beerImg/elhefe.png" alt="Beer pic" />
@@ -160,16 +160,14 @@
               }}>-</span
             >
           </div>
+        </div>
+        <div class="line_it_up">
           <p>Price:</p>
+          <div class="line" />
+          <p>$</p>
         </div>
       </div>
-      <div class="line_it_up">
-        <p>Price:</p>
-        <div class="line" />
-        <p>$</p>
-      </div>
     </div>
-    <!-- </div> -->
   {/each}
 </div>
 <div class="total">
@@ -251,5 +249,12 @@
     text-align: center;
     margin-top: 3rem;
     margin-bottom: 1rem;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .scroll {
+      height: 40rem;
+      overflow: scroll;
+    }
   }
 </style>
