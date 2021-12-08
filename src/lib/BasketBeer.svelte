@@ -1,5 +1,5 @@
 <script>
- import { cart } from "./theCart"
+  import { cart } from "./theCart";
 </script>
 
 <p class="nav_tekst_type2">Add more Beer</p>
@@ -42,7 +42,7 @@
     </div>
     <!-- </div> -->
   {/each}
-  </div>
+</div>
 
 <slot />
 
