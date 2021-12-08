@@ -21,7 +21,7 @@
 {#each beers as beer (beer.name)}
   <div class="beer">
     <li>
-      <img src={logo} alt="beer logo" />
+      <img src="/src/lib/beerImg/elhefe.png" alt="beer logo" />
       <h2>{beer.name}</h2>
       <div class="tap_container">
         <p>Currently</p>
@@ -128,6 +128,25 @@
   .amount {
     margin-left: 3rem;
     margin-right: 3rem;
+  }
+
+  @media only screen and (min-width: 600px) {
+    .beer {
+      margin-left: 3rem;
+      margin-right: 3rem;
+    }
+
+    img {
+      width: 20rem;
+    }
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    .beer {
+      padding-bottom: 1.45rem;
+    }
   }
 
   /*EMILY*/

@@ -225,8 +225,8 @@
   .selection h1 {
     margin-top: 1rem;
     margin-bottom: 2rem;
-    margin-left: 6.5rem;
-    margin-right: 6.5rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .firstFilter,
@@ -252,7 +252,9 @@
   }
 
   .basket button {
-    margin-left: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
   }
 
   /*BASKET*/
@@ -279,6 +281,37 @@
   }
 
   /*ORDER BEERS*/
+
+  /*RESPONSIVE*/
+
+  @media only screen and (min-width: 600px) {
+    .selection {
+      width: 72%;
+      height: 100vh;
+    }
+
+    .logo {
+      margin-left: 26rem !important;
+      margin-right: 26rem !important;
+    }
+
+    .nav_tekst_type1 {
+      display: none;
+    }
+
+    .makeGrid {
+      grid-template-columns: repeat(4, 1fr);
+      /* grid-template-rows: repeat(2, 1fr); */
+    }
+
+    .basket {
+      width: 28%;
+      display: grid;
+      align-items: center;
+    }
+  }
+
+  /*RESPONSIVE*/
 
   /*EMILY*/
 </style>

@@ -91,8 +91,8 @@
 
 <style>
   h1 {
-    margin-left: 6rem;
-    margin-right: 6rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .create_account_container {
