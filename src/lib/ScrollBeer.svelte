@@ -227,6 +227,14 @@
     img {
       width: 25rem;
     }
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    .beer {
+      padding-bottom: 3rem;
+    }
   }
 
   /*EMILY*/

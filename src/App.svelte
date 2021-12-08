@@ -278,6 +278,10 @@
       margin-left: 26rem !important;
       margin-right: 26rem !important;
     }
+
+    .nav_tekst_type1 {
+      display: none;
+    }
   }
 
   /*RESPONSIVE*/

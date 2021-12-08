@@ -256,5 +256,9 @@
       height: 40rem;
       overflow: scroll;
     }
+
+    .nav_tekst_type2 {
+      display: none;
+    }
   }
 </style>
