@@ -290,6 +290,8 @@
 
     .basket {
       width: 28%;
+      display: grid;
+      align-items: center;
     }
   }
 
