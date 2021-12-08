@@ -224,8 +224,13 @@
   }
 
   @media only screen and (min-width: 600px) {
+    .beer {
+      margin-left: 3rem;
+      margin-right: 3rem;
+    }
+
     img {
-      width: 25rem;
+      width: 20rem;
     }
 
     h2 {
@@ -233,7 +238,7 @@
     }
 
     .beer {
-      padding-bottom: 3rem;
+      padding-bottom: 1.45rem;
     }
   }
 

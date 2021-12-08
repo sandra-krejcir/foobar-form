@@ -212,8 +212,8 @@
   .selection h1 {
     margin-top: 1rem;
     margin-bottom: 2rem;
-    margin-left: 6.5rem;
-    margin-right: 6.5rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .firstFilter,
@@ -239,7 +239,9 @@
   }
 
   .basket button {
-    margin-left: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
   }
 
   /*BASKET*/
@@ -271,7 +273,8 @@
 
   @media only screen and (min-width: 600px) {
     .selection {
-      max-width: 75%;
+      width: 72%;
+      height: 100vh;
     }
 
     .logo {
@@ -284,7 +287,7 @@
     }
 
     .makeGrid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       /* grid-template-rows: repeat(2, 1fr); */
     }
 

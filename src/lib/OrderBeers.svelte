@@ -58,4 +58,15 @@
     text-align: center;
     margin-top: 0;
   }
+
+  @media only screen and (min-width: 600px) {
+    img {
+      width: 10rem;
+    }
+
+    p {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+    }
+  }
 </style>
