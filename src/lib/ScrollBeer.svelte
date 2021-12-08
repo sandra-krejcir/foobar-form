@@ -114,7 +114,7 @@
 {#each beers as beer (beer.name)}
   <div class="beer">
     <li>
-      <img src={logo} alt="beer logo" />
+      <img src="/src/lib/beerImg/elhefe.png" alt="beer logo" />
       <h2>{beer.name}</h2>
       <div class="tap_container">
         <p>Currently</p>

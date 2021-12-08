@@ -282,6 +282,15 @@
     .nav_tekst_type1 {
       display: none;
     }
+
+    .makeGrid {
+      grid-template-columns: repeat(3, 1fr);
+      /* grid-template-rows: repeat(2, 1fr); */
+    }
+
+    .basket {
+      width: 28%;
+    }
   }
 
   /*RESPONSIVE*/
