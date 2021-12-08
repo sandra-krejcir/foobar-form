@@ -71,7 +71,7 @@
     <p>Total: $</p>
     <div class="line" />
   </div>
-  <button type="submit"> Complete Order</button>
+  <slot></slot>
 </form>
 
 <style>
