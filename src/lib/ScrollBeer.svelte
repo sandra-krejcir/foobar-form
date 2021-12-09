@@ -53,7 +53,7 @@
           src="/src/lib/decorations/curl2.png"
           alt="curl"
         />
-        <p>This beer is a {beer.category}</p>
+        <p>This beer is a <br /> {beer.category}</p>
         <img class="curl1" src="/src/lib/decorations/curl2.png" alt="curl" />
       </div>
       <div class="curls">
@@ -215,7 +215,8 @@
     }
 
     h2 {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
+      white-space: nowrap;
     }
 
     .beer {
