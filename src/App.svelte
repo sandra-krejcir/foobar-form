@@ -82,16 +82,20 @@
 
     <div class="payment" class:hidden={!paymentClicked}>
       <Payform>
-        <button type="submit" on:click={() => (completeOrderClicked = !completeOrderClicked)}> Complete Order</button>
+        <button
+          type="submit"
+          on:click={() => (completeOrderClicked = !completeOrderClicked)}
+        >
+          Complete Order</button
+        >
         <!-- I think Emly put some code here that brings you back to start when the button is clicked. Now we need it to unhide the thank you div :) -->
-        </Payform>
-
+      </Payform>
     </div>
 
     <div class="thankYou" class:hidden={completeOrderClicked}>
       <!-- I started with the code for the "unhiding", but I have no idea where the code for returning back to start is. -->
       <ThankMessage>
-       <p>Return to Menu</p>
+        <p>Return to Menu</p>
       </ThankMessage>
     </div>
   </section>
@@ -281,6 +285,19 @@
   }
 
   /*ORDER BEERS*/
+
+  /*THANK YOU*/
+
+  .thankYou {
+    margin: 2rem;
+  }
+
+  .thankYou p {
+    color: #801b16;
+    text-align: center;
+  }
+
+  /*THANK YOU*/
 
   /*RESPONSIVE*/
 

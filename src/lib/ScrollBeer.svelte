@@ -24,9 +24,14 @@
       <img src="/src/lib/beerImg/elhefe.png" alt="beer logo" />
       <h2>{beer.name}</h2>
       <div class="tap_container">
-        <p>Currently</p>
+        <div>
+          <p>Currently</p>
+          <img src="/src/lib/decorations/line.svg" alt="line" />
+        </div>
         <img class="tap_icon" src="/src/lib/icons/tap.png" alt="tap icon" />
-        <p>On the Tap</p>
+        <div>
+          <p>On the Tap</p>
+        </div>
       </div>
       <button on:click={moreInfo}>More information about {beer.name}</button>
       <div class="hidden" bind:this={targetChild}>
