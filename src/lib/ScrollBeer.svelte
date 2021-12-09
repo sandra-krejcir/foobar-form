@@ -68,25 +68,27 @@
           alt="curl"
         />
       </div>
-      <div>
-        <span
-          on:click={() => {
-            cart.add({
-              name: beer.name,
-              category: beer.category,
-              price: beer.price,
-              logo: beer.label,
-            });
-          }}>+</span
-        >
-        <span class="amount">0</span>
-        <span
-          on:click={() => {
-            cart.minusOne(beer);
-          }}>-</span
-        >
+      <div class="banner">
+        <div class="amount_container">
+          <span
+            on:click={() => {
+              cart.add({
+                name: beer.name,
+                category: beer.category,
+                price: beer.price,
+                logo: beer.label,
+              });
+            }}>+</span
+          >
+          <span class="amount">0</span>
+          <span
+            on:click={() => {
+              cart.minusOne(beer);
+            }}>-</span
+          >
+        </div>
+        <p class="price">00.00$</p>
       </div>
-      <p>$</p>
     </li>
   </div>
 {/each}
@@ -154,8 +156,8 @@
   }
 
   .amount {
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 4.8rem;
+    margin-right: 4.8rem;
   }
 
   .flip {
@@ -185,6 +187,21 @@
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     margin-top: -2rem;
+  }
+
+  .banner {
+    background-image: url("/src/lib/decorations/banner.png");
+    background-size: cover;
+    height: 4.25rem;
+  }
+
+  .amount_container {
+    padding-top: 0.3rem;
+  }
+
+  .price {
+    padding-top: 0.8rem;
+    font-size: 1rem;
   }
 
   @media only screen and (min-width: 600px) {

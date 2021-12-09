@@ -289,7 +289,7 @@
   /*THANK YOU*/
 
   .thankYou {
-    margin: 2rem;
+    margin: 1rem;
   }
 
   .thankYou p {
