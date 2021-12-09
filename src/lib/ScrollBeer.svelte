@@ -26,11 +26,12 @@
       <div class="tap_container">
         <div>
           <p>Currently</p>
-          <img src="/src/lib/decorations/line.svg" alt="line" />
+          <img class="line1" src="/src/lib/decorations/line.png" alt="line" />
         </div>
         <img class="tap_icon" src="/src/lib/icons/tap.png" alt="tap icon" />
         <div>
           <p>On the Tap</p>
+          <img class="line2" src="/src/lib/decorations/line.png" alt="line" />
         </div>
       </div>
       <button on:click={moreInfo}>More information about {beer.name}</button>
@@ -133,6 +134,16 @@
   .amount {
     margin-left: 3rem;
     margin-right: 3rem;
+  }
+
+  .line1 {
+    width: 5rem;
+    transform: scaleX(-1);
+  }
+
+  .line1 {
+    width: 5rem;
+    transform: scaleX(-1);
   }
 
   @media only screen and (min-width: 600px) {
