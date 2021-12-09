@@ -53,7 +53,10 @@
           src="/src/lib/decorations/curl2.png"
           alt="curl"
         />
-        <p>This beer is a <br /> {beer.category}</p>
+        <div>
+          <p>This beer is a</p>
+          <p class="category">{beer.category}</p>
+        </div>
         <img class="curl1" src="/src/lib/decorations/curl2.png" alt="curl" />
       </div>
       <div class="curls">
@@ -151,8 +154,9 @@
   }
 
   .procent {
-    font-size: 3rem;
+    font-size: 2.9rem;
     font-family: "Playfair Display", serif;
+    padding: 0.5rem;
   }
 
   .amount {
@@ -193,6 +197,7 @@
     background-image: url("/src/lib/decorations/banner.png");
     background-size: cover;
     height: 4.25rem;
+    width: 20rem;
   }
 
   .amount_container {
@@ -202,6 +207,10 @@
   .price {
     padding-top: 0.8rem;
     font-size: 1rem;
+  }
+
+  .category {
+    white-space: nowrap;
   }
 
   @media only screen and (min-width: 600px) {

@@ -5,8 +5,10 @@
 <h2>Payment Details</h2>
 <form>
   <div class="button_conatiner">
+    <img class="line1" src="/src/lib/decorations/line3.png" alt="line3" />
     <button type="button">Pay in person</button>
     <button type="button">MobilePay</button>
+    <img class="line2" src="/src/lib/decorations/line3.png" alt="line3" />
   </div>
   <p>Or</p>
   <div>
@@ -71,7 +73,7 @@
     <p>Total: $</p>
     <div class="line" />
   </div>
-  <slot></slot>
+  <slot />
 </form>
 
 <style>
@@ -171,8 +173,28 @@
     margin-bottom: 0;
   }
 
-  .line {
+  /* .line {
     border-bottom: 1px solid #801b16;
     width: 5rem;
+  } */
+  .line {
+    /* border-bottom: 1px solid #801b16; */
+    background-image: url("/src/lib/decorations/line2.png");
+    background-size: cover;
+    height: 0.4rem;
+    width: 5rem;
+    margin-top: 0;
+  }
+
+  .line1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: -1.3rem;
+  }
+  .line2 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -1.8rem;
   }
 </style>

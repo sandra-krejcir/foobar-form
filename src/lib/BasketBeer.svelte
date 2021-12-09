@@ -97,8 +97,12 @@
   }
 
   .line {
-    border-bottom: 1px solid #801b16;
+    /* border-bottom: 1px solid #801b16; */
+    background-image: url("/src/lib/decorations/line2.png");
+    background-size: cover;
+    height: 0.4rem;
     width: 5rem;
+    margin-top: 2rem;
   }
 
   /* .total {
@@ -126,5 +130,9 @@
     .nav_tekst_type2 {
       display: none;
     }
+  }
+
+  .line {
+    margin-top: 2.5rem;
   }
 </style>
