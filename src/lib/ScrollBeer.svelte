@@ -26,12 +26,16 @@
       <div class="tap_container">
         <div>
           <p>Currently</p>
-          <img class="line1" src="/src/lib/decorations/line.png" alt="line" />
+          <img
+            class="line flip"
+            src="/src/lib/decorations/line.png"
+            alt="line"
+          />
         </div>
         <img class="tap_icon" src="/src/lib/icons/tap.png" alt="tap icon" />
         <div>
           <p>On the Tap</p>
-          <img class="line2" src="/src/lib/decorations/line.png" alt="line" />
+          <img class="line" src="/src/lib/decorations/line.png" alt="line" />
         </div>
       </div>
       <button on:click={moreInfo}>More information about {beer.name}</button>
@@ -43,9 +47,27 @@
         <h4>IMPRESSION</h4>
         <p>{beer.description.overallImpression}</p>
       </div>
-      <p>This beer is a {beer.category}</p>
-      <p class="procent">{beer.alc}%</p>
-      <p>Alchohol</p>
+      <div class="curls">
+        <img
+          class="curl1 flip"
+          src="/src/lib/decorations/curl2.png"
+          alt="curl"
+        />
+        <p>This beer is a {beer.category}</p>
+        <img class="curl1" src="/src/lib/decorations/curl2.png" alt="curl" />
+      </div>
+      <div class="curls">
+        <img class="curl2" src="/src/lib/decorations/curl1.png" alt="curl" />
+        <div class="procent_container">
+          <p class="procent">{beer.alc}%</p>
+          <p>Alchohol</p>
+        </div>
+        <img
+          class="curl2 flip"
+          src="/src/lib/decorations/curl1.png"
+          alt="curl"
+        />
+      </div>
       <div>
         <span
           on:click={() => {
@@ -136,14 +158,33 @@
     margin-right: 3rem;
   }
 
-  .line1 {
-    width: 5rem;
+  .flip {
     transform: scaleX(-1);
   }
 
-  .line1 {
+  .line {
     width: 5rem;
-    transform: scaleX(-1);
+  }
+
+  .curls {
+    display: flex;
+    justify-content: center;
+  }
+
+  .curl1 {
+    width: 4rem;
+    margin: 0.5rem;
+  }
+
+  .curl2 {
+    height: 3rem;
+    width: 5rem;
+  }
+
+  .procent_container {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: -2rem;
   }
 
   @media only screen and (min-width: 600px) {
