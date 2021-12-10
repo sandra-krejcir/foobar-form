@@ -21,7 +21,10 @@
 {#each beers as beer (beer.name)}
   <div class="beer">
     <li>
-      <img src="/src/lib/beerImg/elhefe.png" alt="beer logo" />
+      <div class="img_container">
+        <img src="/src/lib/beerImg/elhefe.png" alt="beer logo" />
+        <div class="frame_cream" />
+      </div>
       <h2>{beer.name}</h2>
       <div class="tap_container">
         <div>
@@ -121,6 +124,10 @@
   }
   img {
     width: 10rem;
+  }
+
+  .frame_cream {
+    background-image: url("/src/lib/decorations/big_frame_cream.png");
   }
 
   h2 {
