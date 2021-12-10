@@ -103,6 +103,25 @@ button {
 
 /*BUTTON*/
 
+/*FRAMES*/
+
+.button_container {
+  position: relative;
+}
+
+.frame {
+  position: absolute;
+  background-image: url("/src/lib/decorations/frame_green_long.png");
+  background-size: 100%;
+  width: 15.7rem;
+  height: 3rem;
+  top: -0.2rem;
+  left: 3.9rem;
+  pointer-events: none;
+}
+
+/*FRAMES*/
+
 /*FORM*/
 
 label {

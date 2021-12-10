@@ -28,6 +28,7 @@
     <div class="hideLog" class:hideRis={creatingOn}>
       <Login>
         <p on:click={() => (creatingOn = !creatingOn)}>Create account</p>
+        <div class="line" />
         <button type="button" on:click={() => (asGuest = !asGuest)}
           >Order as Guest</button
         >
@@ -296,23 +297,21 @@
 
   /*THANK YOU*/
 
-  /*FRAMES*/
+  /*DECORATIONS*/
 
-  .button_container {
-    position: relative;
+  .line {
+    /* border-bottom: 1px solid #801b16; */
+    background-image: url("/src/lib/decorations/line_creem.png");
+    background-size: cover;
+    height: 1rem;
+    width: 11rem;
+    margin: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
   }
 
-  .frame {
-    position: absolute;
-    background-image: url("/src/lib/decorations/frame_green_long.png");
-    background-size: 100%;
-    width: 15.7rem;
-    height: 3rem;
-    top: -0.2rem;
-    left: 3.9rem;
-  }
-
-  /*FRAMES*/
+  /*DECORATIONS*/
 
   /*RESPONSIVE*/
 
