@@ -73,9 +73,12 @@
   <section class="basket" class:hideRis={!asGuest}>
     <div class="order" class:hidden={paymentClicked}>
       <BasketBeer>
-        <button on:click={() => (paymentClicked = !paymentClicked)}
-          >Proceed to checkout</button
-        >
+        <div class="button_container">
+          <button on:click={() => (paymentClicked = !paymentClicked)}
+            >Proceed to checkout</button
+          >
+          <div class="frame" />
+        </div>
       </BasketBeer>
     </div>
 
@@ -292,6 +295,24 @@
   }
 
   /*THANK YOU*/
+
+  /*FRAMES*/
+
+  .button_container {
+    position: relative;
+  }
+
+  .frame {
+    position: absolute;
+    background-image: url("/src/lib/decorations/frame_green_long.png");
+    background-size: 100%;
+    width: 15.7rem;
+    height: 3rem;
+    top: -0.2rem;
+    left: 3.9rem;
+  }
+
+  /*FRAMES*/
 
   /*RESPONSIVE*/
 
