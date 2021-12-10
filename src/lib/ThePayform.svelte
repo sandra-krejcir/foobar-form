@@ -1,3 +1,30 @@
+<script>
+  import { cart } from "./theCart";
+
+  async function postIt() {
+    let orderArr = $cart.map(obj => {
+   let rObj = {
+     name: "",
+     amount: "",
+   }
+   rObj.name = obj.name;
+   rObj.amount = obj.amount;
+
+   return rObj
+  });
+
+   console.log(orderArr)
+
+   const res = await fetch('https://foobar-databar.herokuapp.com/order/', {
+			method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+			body: JSON.stringify(orderArr)
+		})
+		
+		const json = await res.json()
+    console.log(JSON.stringify(json))
+  }
+</script>
 <div>
   <!-- <span>arrow</span> -->
   <p class="nav_tekst_type2">Edit Order</p>
@@ -71,7 +98,7 @@
     <p>Total: $</p>
     <div class="line" />
   </div>
-  <slot></slot>
+  <button type="button" on:click={postIt}> Complete Order</button>
 </form>
 
 <style>

@@ -1,7 +1,6 @@
 <script>
   import style from "./lib/global.css";
   import logo from "./assets/svelte.png";
-  import Counter from "./lib/Counter.svelte";
   import Payform from "./lib/ThePayform.svelte";
   import ScrollBeer from "./lib/ScrollBeer.svelte";
   import OrderBeers from "./lib/OrderBeers.svelte";
@@ -9,12 +8,14 @@
   import Login from "./lib/Loginphone.svelte";
   import CreateAccount from "./lib/CreateAccount.svelte";
   import ThankMessage from "./lib/ThankYou.svelte";
+  
   let types = ["API", "GODknows"];
-  let beers = ["Heiniken", "Karlovacko", "Pan"];
   let paymentClicked = false;
   let creatingOn = false;
   let asGuest = false;
   let completeOrderClicked = false;
+
+  
 </script>
 
 <svelte:head>
@@ -81,10 +82,10 @@
     </div>
 
     <div class="payment" class:hidden={!paymentClicked}>
-      <Payform>
-        <button type="submit" on:click={() => (completeOrderClicked = !completeOrderClicked)}> Complete Order</button>
+      <Payform/>
+        
         <!-- I think Emly put some code here that brings you back to start when the button is clicked. Now we need it to unhide the thank you div :) -->
-        </Payform>
+   
 
     </div>
 
