@@ -1,51 +1,70 @@
 <script>
-    import { cart } from "./theCart"
-export let beer
+  import { cart } from "./theCart";
+  export let beer;
 
-let hidden = true;
-function moreInfo() {
-    hidden=!hidden
-}
+  let hidden = true;
+  function moreInfo() {
+    hidden = !hidden;
+  }
 
-function findBeerAmount(beer) {
-    const indexBeer = $cart.findIndex(
-          (element) => element.name == beer.name
-        )
+  // function findBeerAmount(beer) {
+  //   const indexBeer = $cart.findIndex((element) => element.name == beer.name);
 
-        if (indexBeer === -1) {
-            beer.amount = 0
-            return beer.amount
-        } else {
-            beer.amount = $cart[indexBeer].amount
-            return beer.amount
-        }
-
-}
-
-
+  //   if (indexBeer === -1) {
+  //     beer.amount = 0;
+  //     return beer.amount;
+  //   } else {
+  //     beer.amount = $cart[indexBeer].amount;
+  //     return beer.amount;
+  //   }
+  // }
 </script>
+
 <div class="beer">
-    <li>
+  <li>
+    <div class="img_container">
       <img src="/src/lib/beerImg/elhefe.png" alt="beer logo" />
-      <h2>{beer.name}</h2>
-      <div class="tap_container">
-        <p>Currently</p>
-        <img class="tap_icon" src="/src/lib/icons/tap.png" alt="tap icon" />
-        <p>On the Tap</p>
-      </div>
-      <button on:click={moreInfo}>More information about {beer.name}</button>
-      <div class:hidden>
-        <h4>AROMA</h4>
-        <p>{beer.description.aroma}</p>
-        <h4>FLAVOR</h4>
-        <p>{beer.description.flavor}</p>
-        <h4>IMPRESSION</h4>
-        <p>{beer.description.overallImpression}</p>
-      </div>
-      <p>This beer is a {beer.category}</p>
-      <p class="procent">{beer.alc}%</p>
-      <p>Alchohol</p>
+      <div class="frame_cream" />
+    </div>
+    <h2>{beer.name}</h2>
+    <div class="tap_container">
       <div>
+        <p>Currently</p>
+        <img class="line flip" src="/src/lib/decorations/line.png" alt="line" />
+      </div>
+      <img class="tap_icon" src="/src/lib/icons/tap.png" alt="tap icon" />
+      <div>
+        <p>On the Tap</p>
+        <img class="line" src="/src/lib/decorations/line.png" alt="line" />
+      </div>
+    </div>
+    <button class="about_button" on:click={moreInfo}>About {beer.name}</button>
+    <div class:hidden>
+      <h4>AROMA</h4>
+      <p>{beer.description.aroma}</p>
+      <h4>FLAVOR</h4>
+      <p>{beer.description.flavor}</p>
+      <h4>IMPRESSION</h4>
+      <p>{beer.description.overallImpression}</p>
+    </div>
+    <div class="curls">
+      <img class="curl1 flip" src="/src/lib/decorations/curl2.png" alt="curl" />
+      <div>
+        <p>This beer is a</p>
+        <p class="category">{beer.category}</p>
+      </div>
+      <img class="curl1" src="/src/lib/decorations/curl2.png" alt="curl" />
+    </div>
+    <div class="curls">
+      <img class="curl2" src="/src/lib/decorations/curl1.png" alt="curl" />
+      <div class="procent_container">
+        <p class="procent">{beer.alc}%</p>
+        <p>Alchohol</p>
+      </div>
+      <img class="curl2 flip" src="/src/lib/decorations/curl1.png" alt="curl" />
+    </div>
+    <div class="banner">
+      <div class="amount_container">
         <span
           on:click={() => {
             cart.add({
@@ -57,28 +76,29 @@ function findBeerAmount(beer) {
           }}>+</span
         >
         <span class="amount">
-            {#if $cart.findIndex(
-            (element) => element.name == beer.name) === -1}
+          {#if $cart.findIndex((element) => element.name == beer.name) === -1}
             0
-        {/if} 
-    
-    {#if $cart.findIndex(
-        (element) => element.name == beer.name) > -1}
-        {$cart[$cart.findIndex(
-            (element) => element.name == beer.name)].amount}
-    {/if}</span>
+          {/if}
+          {#if $cart.findIndex((element) => element.name == beer.name) > -1}
+            {$cart[$cart.findIndex((element) => element.name == beer.name)]
+              .amount}
+          {/if}</span
+        >
         <span
           on:click={() => {
             cart.minusOne(beer);
           }}>-</span
         >
       </div>
-      <p>$</p>
-    </li>
-  </div>
+      <p class="price">00.00$</p>
+    </div>
+  </li>
+</div>
 
-  <style>
-      .hidden {
+<!-- {/each} -->
+<style>
+  /*SANDRA*/
+  .hidden {
     display: none;
   }
 
@@ -98,9 +118,24 @@ function findBeerAmount(beer) {
     margin-top: 2rem;
     padding-left: 0;
     padding-right: 0;
+    width: 22.35rem;
+  }
+
+  .img_container {
+    position: relative;
   }
   img {
     width: 10rem;
+  }
+
+  .frame_cream {
+    position: absolute;
+    background-image: url("/src/lib/decorations/big_frame_cream.png");
+    background-size: 100%;
+    width: 10.9rem;
+    height: 12.5rem;
+    top: -0.5rem;
+    left: 4.5rem;
   }
 
   h2 {
@@ -129,37 +164,104 @@ function findBeerAmount(beer) {
     padding-bottom: 0.5rem;
   }
 
+  .about_button {
+    width: 15rem;
+  }
+
   p {
     margin: 0.5rem;
   }
 
   .procent {
-    font-size: 3rem;
+    font-size: 2.9rem;
     font-family: "Playfair Display", serif;
+    padding: 0.5rem;
   }
 
   .amount {
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 4.8rem;
+    margin-right: 4.8rem;
+  }
+
+  .flip {
+    transform: scaleX(-1);
+  }
+
+  .line {
+    width: 5rem;
+  }
+
+  .curls {
+    display: flex;
+    justify-content: center;
+  }
+
+  .curl1 {
+    width: 4rem;
+    margin: 0.5rem;
+  }
+
+  .curl2 {
+    height: 3rem;
+    width: 5rem;
+  }
+
+  .procent_container {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: -2rem;
+  }
+
+  .banner {
+    background-image: url("/src/lib/decorations/banner.png");
+    background-size: cover;
+    height: 4.25rem;
+    width: 20rem;
+  }
+
+  .amount_container {
+    padding-top: 0.3rem;
+  }
+
+  .price {
+    padding-top: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .category {
+    white-space: nowrap;
   }
 
   @media only screen and (min-width: 600px) {
     .beer {
       margin-left: 3rem;
       margin-right: 3rem;
+      width: 25.6rem;
     }
 
     img {
       width: 20rem;
     }
+    .frame_cream {
+      width: 20.9rem;
+      height: 23.9rem;
+      top: -0.5rem;
+      left: -0.5rem;
+    }
 
     h2 {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
+      white-space: nowrap;
     }
 
     .beer {
       padding-bottom: 1.45rem;
     }
+
+    .price {
+      padding-top: 0.5rem;
+    }
   }
 
-  </style>
+  /*EMILY*/
+</style>

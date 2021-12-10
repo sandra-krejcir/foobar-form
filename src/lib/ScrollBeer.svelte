@@ -8,17 +8,8 @@
     const res = await fetch(`https://foobar-databar.herokuapp.com/beertypes`);
     beers = await res.json();
   });
-
-  
 </script>
 
 {#each beers as beer (beer.name)}
-<Beer beer={beer}></Beer>
-  
+  <Beer {beer} />
 {/each}
-
-<style>
-  /*SANDRA*/
-  
-  /*EMILY*/
-</style>

@@ -2,29 +2,30 @@
   import { cart } from "./theCart";
 
   async function postIt() {
-    let orderArr = $cart.map(obj => {
-   let rObj = {
-     name: "",
-     amount: "",
-   }
-   rObj.name = obj.name;
-   rObj.amount = obj.amount;
+    let orderArr = $cart.map((obj) => {
+      let rObj = {
+        name: "",
+        amount: "",
+      };
+      rObj.name = obj.name;
+      rObj.amount = obj.amount;
 
-   return rObj
-  });
+      return rObj;
+    });
 
-   console.log(orderArr)
+    console.log(orderArr);
 
-   const res = await fetch('https://foobar-databar.herokuapp.com/order/', {
-			method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify(orderArr)
-		})
-		
-		const json = await res.json()
-    console.log(JSON.stringify(json))
+    const res = await fetch("https://foobar-databar.herokuapp.com/order/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(orderArr),
+    });
+
+    const json = await res.json();
+    console.log(JSON.stringify(json));
   }
 </script>
+
 <div>
   <!-- <span>arrow</span> -->
   <p class="nav_tekst_type2">Edit Order</p>
@@ -32,8 +33,10 @@
 <h2>Payment Details</h2>
 <form>
   <div class="button_conatiner">
+    <img class="line1" src="/src/lib/decorations/line3.png" alt="line3" />
     <button type="button">Pay in person</button>
     <button type="button">MobilePay</button>
+    <img class="line2" src="/src/lib/decorations/line3.png" alt="line3" />
   </div>
   <p>Or</p>
   <div>
@@ -198,8 +201,28 @@
     margin-bottom: 0;
   }
 
-  .line {
+  /* .line {
     border-bottom: 1px solid #801b16;
     width: 5rem;
+  } */
+  .line {
+    /* border-bottom: 1px solid #801b16; */
+    background-image: url("/src/lib/decorations/line2.png");
+    background-size: cover;
+    height: 0.4rem;
+    width: 5rem;
+    margin-top: 0;
+  }
+
+  .line1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    margin-bottom: -1.3rem;
+  }
+  .line2 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -1.8rem;
   }
 </style>

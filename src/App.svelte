@@ -8,14 +8,12 @@
   import Login from "./lib/Loginphone.svelte";
   import CreateAccount from "./lib/CreateAccount.svelte";
   import ThankMessage from "./lib/ThankYou.svelte";
-  
+
   let types = ["API", "GODknows"];
   let paymentClicked = false;
   let creatingOn = false;
   let asGuest = false;
   let completeOrderClicked = false;
-
-  
 </script>
 
 <svelte:head>
@@ -82,17 +80,15 @@
     </div>
 
     <div class="payment" class:hidden={!paymentClicked}>
-      <Payform/>
-        
-        <!-- I think Emly put some code here that brings you back to start when the button is clicked. Now we need it to unhide the thank you div :) -->
-   
+      <Payform />
 
+      <!-- I think Emly put some code here that brings you back to start when the button is clicked. Now we need it to unhide the thank you div :) -->
     </div>
 
     <div class="thankYou" class:hidden={completeOrderClicked}>
       <!-- I started with the code for the "unhiding", but I have no idea where the code for returning back to start is. -->
       <ThankMessage>
-       <p>Return to Menu</p>
+        <p>Return to Menu</p>
       </ThankMessage>
     </div>
   </section>
@@ -126,6 +122,7 @@
   .doFlex {
     display: flex;
     flex-direction: row;
+    float: left;
   }
 
   .makeGrid {
@@ -282,6 +279,19 @@
   }
 
   /*ORDER BEERS*/
+
+  /*THANK YOU*/
+
+  .thankYou {
+    margin: 1rem;
+  }
+
+  .thankYou p {
+    color: #801b16;
+    text-align: center;
+  }
+
+  /*THANK YOU*/
 
   /*RESPONSIVE*/
 

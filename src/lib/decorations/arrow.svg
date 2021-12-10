@@ -1,0 +1,23 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 148">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 100px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #801b17;
+        font-family: A&SGingerbread, "A&S Gingerbread";
+      }
+
+      .cls-2 {
+        font-size: 162.32px;
+      }
+    </style>
+  </defs>
+  <g>
+    <text class="cls-1" transform="translate(11.12 0.05) rotate(90)">t</text>
+    <text class="cls-1" transform="matrix(0, 1, 1, 0, 16.62, 0.06)">t</text>
+  </g>
+  <text class="cls-2" transform="translate(-235.09 -26.18)">N</text>
+</svg>
