@@ -41,7 +41,8 @@
           <img class="line" src="/src/lib/decorations/line.png" alt="line" />
         </div>
       </div>
-      <button on:click={moreInfo}>More information about {beer.name}</button>
+      <button class="about_button" on:click={moreInfo}>About {beer.name}</button
+      >
       <div class="hidden" bind:this={targetChild}>
         <h4>AROMA</h4>
         <p>{beer.description.aroma}</p>
@@ -121,13 +122,24 @@
     margin-top: 2rem;
     padding-left: 0;
     padding-right: 0;
+    width: 22.35rem;
+  }
+
+  .img_container {
+    position: relative;
   }
   img {
     width: 10rem;
   }
 
   .frame_cream {
+    position: absolute;
     background-image: url("/src/lib/decorations/big_frame_cream.png");
+    background-size: 100%;
+    width: 10.9rem;
+    height: 12.5rem;
+    top: -0.5rem;
+    left: 4.5rem;
   }
 
   h2 {
@@ -154,6 +166,10 @@
     text-transform: capitalize;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  .about_button {
+    width: 15rem;
   }
 
   p {
@@ -212,7 +228,7 @@
   }
 
   .price {
-    padding-top: 0.8rem;
+    padding-top: 0.6rem;
     font-size: 1rem;
   }
 
@@ -224,10 +240,17 @@
     .beer {
       margin-left: 3rem;
       margin-right: 3rem;
+      width: 25.6rem;
     }
 
     img {
       width: 20rem;
+    }
+    .frame_cream {
+      width: 20.9rem;
+      height: 23.9rem;
+      top: -0.5rem;
+      left: -0.5rem;
     }
 
     h2 {
@@ -237,6 +260,10 @@
 
     .beer {
       padding-bottom: 1.45rem;
+    }
+
+    .price {
+      padding-top: 0.5rem;
     }
   }
 

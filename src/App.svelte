@@ -129,6 +129,7 @@
   .doFlex {
     display: flex;
     flex-direction: row;
+    float: left;
   }
 
   .makeGrid {
