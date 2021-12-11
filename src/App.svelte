@@ -8,12 +8,19 @@
   import Login from "./lib/Loginphone.svelte";
   import CreateAccount from "./lib/CreateAccount.svelte";
   import ThankMessage from "./lib/ThankYou.svelte";
+  import { cart } from "./lib/theCart";
 
   let types = ["API", "GODknows"];
   let paymentClicked = false;
   let creatingOn = false;
   let asGuest = false;
-  let completeOrderClicked = false;
+
+  function returnMenu () {
+    paymentClicked = !paymentClicked;
+    document.querySelector(".payment").classList.toggle("hidden");
+    document.querySelector(".thankYou").classList.toggle("hidden");
+    cart.contents = [];
+  }
 </script>
 
 <svelte:head>
@@ -39,7 +46,7 @@
     </div>
   </section>
 
-  <section class="selection" class:hideRis={!asGuest}>
+  <section class="selection" class:hideRis={!asGuest} class:hidden={paymentClicked}>
     <div>
       <span />
       <!-- <img src={logo} alt="The company's logo" /> -->
@@ -55,19 +62,24 @@
           <li>{type}</li>
         {/each}
       </ul>
-      <h2 class:hidden={!paymentClicked}>Your Order</h2>
     </div>
 
-    <div class:scroll_container={!paymentClicked}>
-      <ul class:doFlex={!paymentClicked} class:hidden={paymentClicked}>
+    <div class="scroll_container">
+      <ul class="doFlex">
         <ScrollBeer />
-      </ul>
-
-      <ul class:makeGrid={paymentClicked} class:hidden={!paymentClicked}>
-        <OrderBeers />
       </ul>
     </div>
     <p class="nav_tekst_type1">Edit order</p>
+  </section>
+
+  <section class="theOrder" class:hideRis={!asGuest} class:hidden={!paymentClicked}>
+    <h1 class="logo">FooBar</h1>
+    <h2>Your Order</h2>
+    <div>
+    <ul class="makeGrid">
+      <OrderBeers />
+    </ul>
+    </div>
   </section>
 
   <section class="basket" class:hideRis={!asGuest}>
@@ -80,15 +92,17 @@
     </div>
 
     <div class="payment" class:hidden={!paymentClicked}>
-      <Payform />
+      <Payform >
+        <p class="nav_tekst_type2" on:click={() => (paymentClicked = !paymentClicked)}>Edit order</p>
+      </Payform>
 
       <!-- I think Emly put some code here that brings you back to start when the button is clicked. Now we need it to unhide the thank you div :) -->
     </div>
 
-    <div class="thankYou" class:hidden={completeOrderClicked}>
+    <div class="thankYou hidden">
       <!-- I started with the code for the "unhiding", but I have no idea where the code for returning back to start is. -->
       <ThankMessage>
-        <p>Return to Menu</p>
+        <p on:click={returnMenu}>Return to Menu</p>
       </ThankMessage>
     </div>
   </section>
@@ -104,6 +118,12 @@
 
   .hidden {
     display: none;
+  }
+
+  .nav_tekst_type2 {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
   }
 
   .hideLog {

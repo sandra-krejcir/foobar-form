@@ -2,6 +2,8 @@
   import { cart } from "./theCart";
 
   async function postIt() {
+    document.querySelector(".payment").classList.toggle("hidden");
+    document.querySelector(".thankYou").classList.toggle("hidden");
     let orderArr = $cart.map((obj) => {
       let rObj = {
         name: "",
@@ -23,12 +25,14 @@
 
     const json = await res.json();
     console.log(JSON.stringify(json));
+
+    await localStorage.clear();
   }
 </script>
 
 <div>
   <!-- <span>arrow</span> -->
-  <p class="nav_tekst_type2">Edit Order</p>
+  <slot></slot>
 </div>
 <h2>Payment Details</h2>
 <form>
@@ -111,11 +115,6 @@
     text-align: center;
   }
 
-  .nav_tekst_type2 {
-    text-align: center;
-    margin-top: 4rem;
-    margin-bottom: 1rem;
-  }
 
   .button_conatiner {
     display: grid;
