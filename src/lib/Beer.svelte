@@ -7,23 +7,14 @@
     hidden = !hidden;
   }
 
-  // function findBeerAmount(beer) {
-  //   const indexBeer = $cart.findIndex((element) => element.name == beer.name);
-
-  //   if (indexBeer === -1) {
-  //     beer.amount = 0;
-  //     return beer.amount;
-  //   } else {
-  //     beer.amount = $cart[indexBeer].amount;
-  //     return beer.amount;
-  //   }
-  // }
+  const beerNameWithoutSpaces = beer.name.replaceAll(" ", "").toLowerCase();
+  const imageSource = `/src/lib/beerImg/${beerNameWithoutSpaces}.png`;
 </script>
 
 <div class="beer">
   <li>
     <div class="img_container">
-      <img src="/src/lib/beerImg/elhefe.png" alt="beer logo" />
+      <img src={imageSource} alt="beer logo" />
       <div class="frame_cream" />
     </div>
     <h2>{beer.name}</h2>
@@ -124,8 +115,9 @@
   .img_container {
     position: relative;
   }
-  img {
+  .img_container img {
     width: 10rem;
+    height: 11.6rem;
   }
 
   .frame_cream {

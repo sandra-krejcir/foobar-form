@@ -35,6 +35,7 @@
     <div class="hideLog" class:hideRis={creatingOn}>
       <Login>
         <p on:click={() => (creatingOn = !creatingOn)}>Create account</p>
+        <div class="line" />
         <button type="button" on:click={() => (asGuest = !asGuest)}
           >Order as Guest</button
         >
@@ -85,9 +86,12 @@
   <section class="basket" class:hideRis={!asGuest}>
     <div class="order" class:hidden={paymentClicked}>
       <BasketBeer>
-        <button on:click={() => (paymentClicked = !paymentClicked)}
-          >Proceed to checkout</button
-        >
+        <div class="button_container">
+          <button on:click={() => (paymentClicked = !paymentClicked)}
+            >Proceed to checkout</button
+          >
+          <div class="frame" />
+        </div>
       </BasketBeer>
     </div>
 
@@ -312,6 +316,22 @@
   }
 
   /*THANK YOU*/
+
+  /*DECORATIONS*/
+
+  .line {
+    /* border-bottom: 1px solid #801b16; */
+    background-image: url("/src/lib/decorations/line_creem.png");
+    background-size: cover;
+    height: 1rem;
+    width: 11rem;
+    margin: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+
+  /*DECORATIONS*/
 
   /*RESPONSIVE*/
 
