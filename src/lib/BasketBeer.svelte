@@ -127,16 +127,6 @@
     margin-top: 2rem;
   }
 
-  /* .total {
-    display: flex;
-    justify-content: center;
-    margin-top: 5rem;
-  }
-
-  .total > * {
-    margin-bottom: 0;
-  } */
-
   .nav_tekst_type2 {
     text-align: center;
     margin-top: 3rem;

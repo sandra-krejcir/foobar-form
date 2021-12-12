@@ -1,5 +1,8 @@
 <!-- <img alt="logo" /> -->
-<h1 class="logo">FooBar</h1>
+<div class="button_container">
+  <h1 class="logo">FooBar</h1>
+  <div class="frame_creem_logo" />
+</div>
 <div class="create_account_container">
   <p class="bigger_font">
     Your phone number will be used to receive receipts and to log in. Make a
@@ -84,7 +87,10 @@
         <p>I Agree to the Terms and Conditions.</p>
       </div>
     </div>
-    <button type="submit">Create Account</button>
+    <div class="button_container">
+      <button type="submit">Create Account</button>
+      <div class="frame_creem_long" />
+    </div>
   </form>
 </div>
 <p class="back">Go Back</p>
@@ -164,5 +170,13 @@
 
   .back {
     margin-top: 0;
+  }
+
+  .frame_creem_logo {
+    top: -0.5rem;
+    left: 6.6rem;
+  }
+  .frame_creem_long {
+    width: 13.5rem;
   }
 </style>

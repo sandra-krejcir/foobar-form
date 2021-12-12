@@ -213,11 +213,13 @@
 
   .amount_container {
     padding-top: 0.3rem;
+    user-select: none;
   }
 
   .price {
     padding-top: 0.6rem;
     font-size: 1rem;
+    user-select: none;
   }
 
   .category {
@@ -231,8 +233,9 @@
       width: 25.6rem;
     }
 
-    img {
+    .img_container img {
       width: 20rem;
+      height: 22.6rem;
     }
     .frame_cream {
       width: 20.9rem;

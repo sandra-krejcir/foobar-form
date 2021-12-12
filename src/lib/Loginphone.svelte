@@ -1,6 +1,9 @@
 <section class="login">
   <!-- <img alt="logo"> -->
-  <h1 class="logo">FooBar</h1>
+  <div class="button_container">
+    <h1 class="logo">FooBar</h1>
+    <div class="frame_creem_logo" />
+  </div>
   <div>
     <h2>Log in for easier ordering</h2>
     <form>
@@ -21,7 +24,10 @@
         placeholder="******"
       />
       <label for="password">Password</label>
-      <button type="submit">Log in</button>
+      <div class="button_container">
+        <button type="submit">Log in</button>
+        <div class="frame_creem_short" />
+      </div>
     </form>
     <slot />
   </div>
@@ -43,5 +49,10 @@
 
   form {
     display: grid;
+  }
+
+  .button_container {
+    display: flex;
+    justify-content: center;
   }
 </style>

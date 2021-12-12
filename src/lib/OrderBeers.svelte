@@ -49,4 +49,10 @@
       font-size: 1.5rem;
     }
   }
+
+  /* @media only screen and (min-width: 600px) {
+    h1 {
+      marrgin
+    }
+  } */
 </style>

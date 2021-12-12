@@ -15,7 +15,7 @@
   let creatingOn = false;
   let asGuest = false;
 
-  function returnMenu () {
+  function returnMenu() {
     paymentClicked = !paymentClicked;
     document.querySelector(".payment").classList.toggle("hidden");
     document.querySelector(".thankYou").classList.toggle("hidden");
@@ -36,9 +36,14 @@
       <Login>
         <p on:click={() => (creatingOn = !creatingOn)}>Create account</p>
         <div class="line" />
-        <button type="button" on:click={() => (asGuest = !asGuest)}
-          >Order as Guest</button
-        >
+        <div class="button_container">
+          <button
+            class="guest_button"
+            type="button"
+            on:click={() => (asGuest = !asGuest)}>Order as Guest</button
+          >
+          <div class="frame_creem_long" />
+        </div>
       </Login>
     </div>
 
@@ -47,11 +52,18 @@
     </div>
   </section>
 
-  <section class="selection" class:hideRis={!asGuest} class:hidden={paymentClicked}>
+  <section
+    class="selection"
+    class:hideRis={!asGuest}
+    class:hidden={paymentClicked}
+  >
     <div>
       <span />
       <!-- <img src={logo} alt="The company's logo" /> -->
-      <h1 class="logo">FooBar</h1>
+      <div class="button_container">
+        <h1 class="logo">FooBar</h1>
+        <div class="frame_creem_logo" />
+      </div>
       <span />
       <ul class="firstFilter" class:hidden={paymentClicked}>
         <li>Full selection</li>
@@ -73,19 +85,30 @@
     <p class="nav_tekst_type1">Edit order</p>
   </section>
 
-  <section class="theOrder" class:hideRis={!asGuest} class:hidden={!paymentClicked}>
-    <h1 class="logo">FooBar</h1>
+  <section
+    class="theOrder"
+    class:hideRis={!asGuest}
+    class:hidden={!paymentClicked}
+  >
+    <div class="button_container">
+      <h1 class="logo">FooBar</h1>
+      <div class="frame_creem_logo" />
+    </div>
     <h2>Your Order</h2>
     <div>
-    <ul class="makeGrid">
-      <OrderBeers />
-    </ul>
+      <ul class="makeGrid">
+        <OrderBeers />
+      </ul>
     </div>
   </section>
 
   <section class="basket" class:hideRis={!asGuest}>
     <div class="order" class:hidden={paymentClicked}>
       <BasketBeer>
+        <div class="total">
+          <p>Total: $</p>
+          <div class="line" />
+        </div>
         <div class="button_container">
           <button on:click={() => (paymentClicked = !paymentClicked)}
             >Proceed to checkout</button
@@ -96,8 +119,13 @@
     </div>
 
     <div class="payment" class:hidden={!paymentClicked}>
-      <Payform >
-        <p class="nav_tekst_type2" on:click={() => (paymentClicked = !paymentClicked)}>Edit order</p>
+      <Payform>
+        <p
+          class="nav_tekst_type2"
+          on:click={() => (paymentClicked = !paymentClicked)}
+        >
+          Edit order
+        </p>
       </Payform>
 
       <!-- I think Emly put some code here that brings you back to start when the button is clicked. Now we need it to unhide the thank you div :) -->
@@ -128,6 +156,7 @@
     text-align: center;
     margin-top: 4rem;
     margin-bottom: 1rem;
+    color: #801b16;
   }
 
   .hideLog {
@@ -230,6 +259,10 @@
     text-align: center;
   }
 
+  .guest_button {
+    margin-bottom: 15vh;
+  }
+
   /*LOGIN*/
 
   /*SELECTION*/
@@ -277,6 +310,25 @@
     margin-left: auto;
     margin-right: auto;
     display: flex;
+  }
+
+  .total {
+    display: grid;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .total p {
+    margin-bottom: 0;
+    text-align: center;
+    color: #801b16;
+  }
+
+  .total .line {
+    margin-top: 0;
+    background-image: url("/src/lib/decorations/line2.png");
+    height: 0.4rem;
+    width: 5rem;
   }
 
   /*BASKET*/
@@ -331,6 +383,11 @@
     margin-bottom: 0;
   }
 
+  .frame_creem_logo {
+    top: -0.5rem;
+    left: 6.6rem;
+  }
+
   /*DECORATIONS*/
 
   /*RESPONSIVE*/
@@ -344,6 +401,10 @@
     .logo {
       margin-left: 26rem !important;
       margin-right: 26rem !important;
+    }
+
+    .frame_creem_logo {
+      left: 25.7rem;
     }
 
     .nav_tekst_type1 {
@@ -360,6 +421,37 @@
       display: grid;
       align-items: center;
     }
+
+    .theOrder {
+      width: 72%;
+      height: 100vh;
+    }
+
+    .payment {
+      height: 100vh;
+      background-color: #fef8e9;
+    }
+
+    /*ANIMATION END*/
+
+    /* .theOrder {
+      width: 55%;
+    }
+
+    .theOrder h1 {
+      margin-left: 19rem !important;
+      margin-right: 19rem !important;
+    }
+
+    .theOrder .frame_creem_logo {
+      left: 18.7rem;
+    }
+
+    .payment {
+      width: 60vh;
+    } */
+
+    /*ANIMATION END*/
   }
 
   /*RESPONSIVE*/
