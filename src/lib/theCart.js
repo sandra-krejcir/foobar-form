@@ -32,6 +32,7 @@ function createCart() {
         sync(cartCopy);
         return cartCopy;
       }),
+    reset: () => set([]),
     minusOne: (obj) =>
       update((cart) => {
         const cartCopy = [...cart];

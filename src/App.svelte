@@ -10,7 +10,7 @@
   import ThankMessage from "./lib/ThankYou.svelte";
   import { cart } from "./lib/theCart";
 
-  let types = ["API", "GODknows"];
+  
   let paymentClicked = false;
   let creatingOn = false;
   let asGuest = false;
@@ -19,7 +19,7 @@
     paymentClicked = !paymentClicked;
     document.querySelector(".payment").classList.toggle("hidden");
     document.querySelector(".thankYou").classList.toggle("hidden");
-    cart.contents = [];
+    cart.reset();
   }
 </script>
 
@@ -47,28 +47,9 @@
   </section>
 
   <section class="selection" class:hideRis={!asGuest} class:hidden={paymentClicked}>
-    <div>
-      <span />
-      <!-- <img src={logo} alt="The company's logo" /> -->
-      <h1 class="logo">FooBar</h1>
-      <span />
-      <ul class="firstFilter" class:hidden={paymentClicked}>
-        <li>Full selection</li>
-        <li>On today's tap</li>
-      </ul>
-      <ul class="secondFilter" class:hidden={paymentClicked}>
-        <li>All</li>
-        {#each types as type}
-          <li>{type}</li>
-        {/each}
-      </ul>
-    </div>
-
-    <div class="scroll_container">
-      <ul class="doFlex">
-        <ScrollBeer />
-      </ul>
-    </div>
+    <!-- <img src={logo} alt="The company's logo" /> -->
+    <h1 class="logo">FooBar</h1>
+    <ScrollBeer />
     <p class="nav_tekst_type1">Edit order</p>
   </section>
 
@@ -133,17 +114,7 @@
   /* section {
     max-width: 50%;
   } */
-  .scroll_container {
-    /* max-width: max-content; */
-    overflow: scroll;
-    /* scroll-snap-type: y mandatory; */
-  }
-
-  .doFlex {
-    display: flex;
-    flex-direction: row;
-    float: left;
-  }
+  
 
   .makeGrid {
     display: grid;
@@ -247,11 +218,6 @@
     margin-right: auto !important;
   }
 
-  .firstFilter,
-  .secondFilter {
-    display: flex;
-    justify-content: center;
-  }
 
   .nav_tekst_type1 {
     text-align: center;
