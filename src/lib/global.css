@@ -196,6 +196,60 @@ label[for="cardCvc"],
   margin-left: 0.2rem;
 }
 
+/*check box*/
+[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+[type="checkbox"] + label {
+  position: relative;
+  padding-left: 30px;
+  display: flex;
+  line-height: 25px;
+  backdrop-filter: none;
+  padding-bottom: 1rem;
+}
+
+[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  outline: 2px solid #f0e5c6;
+  border-radius: 100%;
+  left: 8px;
+  top: 8px;
+}
+
+[type="checkbox"]:checked + label::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  outline: 2px solid #466433;
+  border-radius: 100%;
+  left: 8px;
+  top: 8px;
+}
+
+[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  left: 8px;
+  top: 8px;
+  background-image: url(/src/lib/icons/check.png);
+  background-size: contain;
+}
+
+/*check box*/
+
 /*FORM*/
 
 @media only screen and (min-width: 600px) {

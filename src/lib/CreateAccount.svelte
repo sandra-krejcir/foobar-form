@@ -80,11 +80,15 @@
     <div class="terms_news_container">
       <div class="news">
         <input type="checkbox" id="newsletter" name="newsletter" />
-        <p>I want messages with special offers</p>
+        <label name="newsletter" for="newsletter"
+          >I want messages with special offers</label
+        >
       </div>
       <div class="terms">
         <input type="checkbox" id="terms" name="terms" />
-        <p>I Agree to the Terms and Conditions.</p>
+        <label name="terms" for="terms"
+          >I Agree to the Terms and Conditions.</label
+        >
       </div>
     </div>
     <div class="button_container">
@@ -148,10 +152,6 @@
   #phoneNumber,
   #password {
     width: 16.5rem;
-  }
-
-  .terms_news_container {
-    margin: 2rem;
   }
 
   .terms,
