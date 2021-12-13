@@ -57,6 +57,7 @@
     <div class="banner">
       <div class="amount_container">
         <span
+          class="click_me"
           on:click={() => {
             cart.add({
               name: beer.name,
@@ -76,6 +77,7 @@
           {/if}</span
         >
         <span
+          class="click_me"
           on:click={() => {
             cart.minusOne(beer);
           }}>-</span

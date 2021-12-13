@@ -100,7 +100,7 @@
     <p class="recept">You receive your recept via a Text</p>
     <div class="terms_container">
       <input type="checkbox" id="terms" name="terms" />
-      <label name="terms" for="terms" class="terms"
+      <label name="terms" for="terms"
         >I Agree to the Terms and Conditions.</label
       >
     </div>
@@ -190,10 +190,6 @@
   .terms_container {
     display: flex;
     align-items: center;
-  }
-
-  .terms {
-    font-size: 1rem;
   }
 
   .total {
