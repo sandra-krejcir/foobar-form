@@ -38,8 +38,8 @@
 <form>
   <div class="button_conatiner">
     <img class="line1" src="/src/lib/decorations/line3.png" alt="line3" />
-    <button type="button">Pay in person</button>
-    <button type="button">MobilePay</button>
+    <button class="pay_button" type="button">Pay in person</button>
+    <button class="pay_button" type="button">MobilePay</button>
     <img class="line2" src="/src/lib/decorations/line3.png" alt="line3" />
   </div>
   <p>Or</p>
@@ -105,7 +105,10 @@
     <p>Total: $</p>
     <div class="line" />
   </div>
-  <button type="button" on:click={postIt}> Complete Order</button>
+  <div class="button_container">
+    <button type="button" on:click={postIt}> Complete Order</button>
+    <div class="frame" />
+  </div>
 </form>
 
 <style>
@@ -121,7 +124,7 @@
     justify-content: center;
   }
 
-  button[type="button"] {
+  .pay_button {
     background: rgba(255, 0, 0, 0);
     color: #801b16;
     border: 1px solid #801b16;
@@ -223,5 +226,14 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: -1.8rem;
+  }
+
+  .frame {
+    background-size: cover;
+    width: 13.1rem;
+    height: 3rem;
+    top: 1.8rem;
+    left: 02rem;
+    background-repeat: no-repeat;
   }
 </style>

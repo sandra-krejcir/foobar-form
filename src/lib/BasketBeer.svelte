@@ -1,5 +1,8 @@
 <script>
   import { cart } from "./theCart";
+
+  // const beerNameWithoutSpaces = beer.name.replaceAll(" ", "").toLowerCase();
+  // const imageSource = `/src/lib/beerImg/${beerNameWithoutSpaces}.png`;
 </script>
 
 <p class="nav_tekst_type2">Add more Beer</p>
@@ -7,7 +10,11 @@
 <div class="scroll">
   {#each $cart as beer}
     <div class="item_container">
-      <img src="/src/lib/beerImg/elhefe.png" alt="Beer pic" />
+      <div class="img_container">
+        <img src="/src/lib/beerImg/elhefe.png" alt="beer logo" />
+        <!-- <img src={imageSource} alt="beer logo" /> -->
+        <div class="frame_green" />
+      </div>
       <div>
         <p class="beer_name">{beer.name}</p>
         <div>
@@ -58,9 +65,24 @@
     margin: 2rem;
   }
 
+  .img_container {
+    position: relative;
+  }
+
   img {
     width: 5rem;
     margin-right: 0.5rem;
+  }
+
+  .frame_green {
+    position: absolute;
+    background-image: url("/src/lib/decorations/frame_green.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 5.4rem;
+    height: 6.2rem;
+    top: -0.2rem;
+    left: -0.2rem;
   }
 
   .beer_name {
@@ -130,9 +152,9 @@
     .nav_tekst_type2 {
       display: none;
     }
-  }
 
-  .line {
-    margin-top: 2.5rem;
+    .line {
+      margin-top: 2.5rem;
+    }
   }
 </style>
