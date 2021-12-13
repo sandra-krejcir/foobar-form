@@ -7,14 +7,17 @@
     hidden = !hidden;
   }
 
-  const beerNameWithoutSpaces = beer.name.replaceAll(" ", "").toLowerCase();
-  const imageSource = `/src/lib/beerImg/${beerNameWithoutSpaces}.png`;
+ let totalAmount;
+ console.log(totalAmount)
+
+//   const beerNameWithoutSpaces = beer.name.replaceAll(" ", "").toLowerCase();
+//   const imageSource = `/src/lib/beerImg/${beerNameWithoutSpaces}.png`;
 </script>
 
 <div class="beer">
   <li>
     <div class="img_container">
-      <img src={imageSource} alt="beer logo" />
+      <img src="/src/lib/beerImg/{beer.label}" alt="beer logo" />
       <div class="frame_cream" />
     </div>
     <h2>{beer.name}</h2>
@@ -81,7 +84,14 @@
           }}>-</span
         >
       </div>
-      <p class="price">00.00$</p>
+      <p class="price">{#if $cart.findIndex((element) => element.name == beer.name) === -1}
+        00.00$
+      {/if}
+      {#if $cart.findIndex((element) => element.name == beer.name) > -1}
+            {$cart[$cart.findIndex((element) => element.name == beer.name)]
+              .amount * 45}.00$
+          {/if}
+    </p>
     </div>
   </li>
 </div>

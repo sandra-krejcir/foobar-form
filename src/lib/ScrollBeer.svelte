@@ -3,10 +3,10 @@
   import Beer from "./Beer.svelte";
 
   let beers = [];
+  let types = ["IPA", "Hefeweizen", "Oktoberfest", "European Lager", "Stout", "Belgian Specialty Ale", "California Common"]
 
   let bar;
   let fullSelection = false;
-  let types = ["API", "GODknows"];
 
   onMount(async () => {
     const res = await fetch(`https://foobar-databar.herokuapp.com/`);
