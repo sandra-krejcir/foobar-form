@@ -52,43 +52,10 @@
     </div>
   </section>
 
-<<<<<<< HEAD
   <section class="selection" class:hideRis={!asGuest} class:hidden={paymentClicked}>
     <!-- <img src={logo} alt="The company's logo" /> -->
     <h1 class="logo">FooBar</h1>
     <ScrollBeer />
-=======
-  <section
-    class="selection"
-    class:hideRis={!asGuest}
-    class:hidden={paymentClicked}
-  >
-    <div>
-      <span />
-      <!-- <img src={logo} alt="The company's logo" /> -->
-      <div class="button_container">
-        <h1 class="logo">FooBar</h1>
-        <div class="frame_creem_logo" />
-      </div>
-      <span />
-      <ul class="firstFilter" class:hidden={paymentClicked}>
-        <li>Full selection</li>
-        <li>On today's tap</li>
-      </ul>
-      <ul class="secondFilter" class:hidden={paymentClicked}>
-        <li>All</li>
-        {#each types as type}
-          <li>{type}</li>
-        {/each}
-      </ul>
-    </div>
-
-    <div class="scroll_container">
-      <ul class="doFlex">
-        <ScrollBeer />
-      </ul>
-    </div>
->>>>>>> docorations-and-final-touches
     <p class="nav_tekst_type1">Edit order</p>
   </section>
 
