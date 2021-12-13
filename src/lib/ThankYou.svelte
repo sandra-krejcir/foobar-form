@@ -19,6 +19,14 @@
     text-align: center;
   }
 
+  h2 {
+    margin-top: 5rem;
+  }
+
+  h3 {
+    margin-bottom: 5rem;
+  }
+
   span {
     color: rgb(30, 255, 0);
   }
@@ -30,6 +38,8 @@
     height: 7.5rem;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
   }
 
   .theTimer p {

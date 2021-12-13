@@ -32,7 +32,7 @@
 
 <div>
   <!-- <span>arrow</span> -->
-  <slot></slot>
+  <slot />
 </div>
 <h2>Payment Details</h2>
 <form>
@@ -118,7 +118,6 @@
     text-align: center;
   }
 
-
   .button_conatiner {
     display: grid;
     justify-content: center;
@@ -196,7 +195,7 @@
   .total {
     display: grid;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
 
   .total p {
@@ -235,5 +234,9 @@
     top: 1.8rem;
     left: 02rem;
     background-repeat: no-repeat;
+  }
+
+  .button_container {
+    margin-left: 1rem;
   }
 </style>
