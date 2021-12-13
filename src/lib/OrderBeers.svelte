@@ -1,11 +1,12 @@
 <script>
-  import { cart } from "./theCart";
+  import Beer from "./Beer.svelte";
+import { cart } from "./theCart";
 </script>
 
 {#each $cart as beer}
   <li>
     <div class="img_container">
-      <img src="/src/lib/beerImg/elhefe.png" alt="beer logo" />
+      <img src="/src/lib/beerImg/{beer.logo}" alt="beer logo" />
       <div class="frame_creem" />
       <p>{beer.name}</p>
       <div>

@@ -1,5 +1,6 @@
 <script>
-  import { cart } from "./theCart";
+  import Beer from "./Beer.svelte";
+import { cart } from "./theCart";
 
   // const beerNameWithoutSpaces = beer.name.replaceAll(" ", "").toLowerCase();
   // const imageSource = `/src/lib/beerImg/${beerNameWithoutSpaces}.png`;
@@ -11,7 +12,7 @@
   {#each $cart as beer}
     <div class="item_container">
       <div class="img_container">
-        <img src="/src/lib/beerImg/elhefe.png" alt="beer logo" />
+        <img src="/src/lib/beerImg/{beer.logo}" alt="beer logo" />
         <!-- <img src={imageSource} alt="beer logo" /> -->
         <div class="frame_green" />
       </div>
@@ -42,7 +43,7 @@
         <div class="line_it_up">
           <p>Price:</p>
           <div class="line" />
-          <p>$</p>
+          <p>{beer.amount * 45}.00$</p>
         </div>
       </div>
     </div>
