@@ -73,6 +73,7 @@ li {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+
 /*FONTS*/
 
 /*BUTTON*/
@@ -160,10 +161,6 @@ button {
 
 /*FORM*/
 
-label {
-  display: block;
-}
-
 input {
   display: block;
   background-color: #f0e5c600;
@@ -178,6 +175,25 @@ input {
 
 input::placeholder {
   color: #f0e5c6;
+}
+
+label {
+  margin-top: 1rem;
+  margin-bottom: -0.5rem;
+  margin-left: 0.5rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  backdrop-filter: blur(10px);
+  /* background-color: #801b16; */
+  width: fit-content;
+  z-index: 100;
+  display: block;
+}
+
+label[for="cardCvc"],
+[for="cardExp"] {
+  padding: 0;
+  margin-left: 0.2rem;
 }
 
 /*FORM*/
