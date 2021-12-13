@@ -6,7 +6,15 @@
 
   let bar;
   let fullSelection = false;
-  let types = ["API", "GODknows"];
+  let types = [
+    "IPA",
+    "Hefeweizen",
+    "Oktoberfest",
+    "European Lager",
+    "Stout",
+    "Belgian Specialty Ale",
+    "California Common",
+  ];
 
   onMount(async () => {
     const res = await fetch(`https://foobar-databar.herokuapp.com/`);
@@ -45,9 +53,11 @@
   </ul>
   <ul class="secondFilter">
     <li>All</li>
-    {#each types as type}
-      <li>{type}</li>
-    {/each}
+    <div class="type_container">
+      {#each types as type}
+        <li class="type">{type}</li>
+      {/each}
+    </div>
   </ul>
 </div>
 
@@ -95,6 +105,13 @@
     list-style: none;
   }
 
-  @media (max-width: 480px) {
+  .type_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .type {
+    text-align: center;
   }
 </style>
