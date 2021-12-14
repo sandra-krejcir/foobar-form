@@ -168,9 +168,6 @@
     margin-bottom: 0;
   }
 
-  .back {
-    margin-top: 0;
-  }
 
   .frame_creem_logo {
     top: -0.5rem;

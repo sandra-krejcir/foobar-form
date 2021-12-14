@@ -1,9 +1,11 @@
 <script>
   import { cart } from "./theCart";
-
+ 
+  
   async function postIt() {
     document.querySelector(".payment").classList.toggle("hidden");
     document.querySelector(".thankYou").classList.toggle("hidden");
+
     let orderArr = $cart.map((obj) => {
       let rObj = {
         name: "",
@@ -35,12 +37,12 @@
   <slot />
 </div>
 <h2>Payment Details</h2>
-<form>
+<form id="theForm">
   <div class="button_conatiner">
-    <img class="line1" src="./src/lib/decorations/line3.png" alt="line3" />
+    <img class="line1" src="/src/lib/decorations/line3.png" alt="line3" />
     <button class="pay_button" type="button">Pay in person</button>
     <button class="pay_button" type="button">MobilePay</button>
-    <img class="line2" src="./src/lib/decorations/line3.png" alt="line3" />
+    <img class="line2" src="/src/lib/decorations/line3.png" alt="line3" />
   </div>
   <p>Or</p>
   <div>
@@ -49,7 +51,9 @@
       minlength="2"
       name="cardHolder"
       id="cardHolder"
+      value=""
       placeholder="John Doe"
+      required
     />
     <label for="cardHolder">Card Holder</label>
     <div class="card_info">
@@ -60,6 +64,8 @@
           maxlength="20"
           name="cardNumber"
           id="cardNumber"
+          pattern="[:digit:]"
+          value=""
           placeholder="XXXX-XXXX-XXXX-XXXX"
         />
         <label for="cardNumber">Card Number</label>
@@ -71,6 +77,7 @@
           maxlength="5"
           name="cardExp"
           id="cardExp"
+          value=""
           placeholder="mm/yy"
         />
         <label for="cardExp">Expires</label>
@@ -82,6 +89,7 @@
           maxlength="3"
           name="cardCvc"
           id="cardCvc"
+          value=""
           placeholder="000"
         />
         <label for="cardCvc">CVC</label>
@@ -92,12 +100,13 @@
       minlength="15"
       name="phoneNumber"
       id="phoneNumber"
+      value=""
       placeholder="+45 XX XX XX XX"
     />
     <label for="phoneNumber">Phone Number</label>
     <p class="recept">You receive your recept via a Text</p>
     <div class="terms_container">
-      <input type="checkbox" id="terms" name="terms" />
+      <input type="checkbox" id="terms" name="terms" required value=""/>
       <p class="terms">I Agree to the Terms and Conditions.</p>
     </div>
   </div>
@@ -106,7 +115,7 @@
     <div class="line" />
   </div>
   <div class="button_container">
-    <button type="button" on:click={postIt}> Complete Order</button>
+    <button class="sendOrder" type="submit" on:submit={postIt}> Complete Order</button>
     <div class="frame" />
   </div>
 </form>
