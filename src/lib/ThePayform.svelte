@@ -61,8 +61,8 @@
       <div>
         <input
           type="text"
-          minlength="16"
-          maxlength="16"
+          minlength="20"
+          maxlength="20"
           name="cardNumber"
           id="cardNumber"
           value=""
