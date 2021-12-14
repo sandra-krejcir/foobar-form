@@ -132,7 +132,7 @@
 
   .frame_cream {
     position: absolute;
-    background-image: url("./lib/decorations/big_frame_cream.png");
+    background-image: url("/src/lib/decorations/big_frame_cream.png");
     background-size: 100%;
     width: 10.9rem;
     height: 12.5rem;
@@ -215,7 +215,7 @@
   }
 
   .banner {
-    background-image: url("./lib/decorations/banner.png");
+    background-image: url("/src/lib/decorations/banner.png");
     background-size: cover;
     height: 4.25rem;
     width: 20rem;

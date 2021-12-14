@@ -113,7 +113,7 @@ button {
 
 .frame {
   position: absolute;
-  background-image: url("./lib/decorations/frame_green_long.png");
+  background-image: url("/src/lib/decorations/frame_green_long.png");
   background-size: 100%;
   width: 15.7rem;
   height: 3rem;
@@ -124,7 +124,7 @@ button {
 
 .frame_creem_short {
   position: absolute;
-  background-image: url("./lib/decorations/frame_creem_short.png");
+  background-image: url("/src/lib/decorations/frame_creem_short.png");
   background-size: cover;
   width: 9.3rem;
   height: 3rem;
@@ -135,7 +135,7 @@ button {
 
 .frame_creem_long {
   position: absolute;
-  background-image: url("./lib/decorations/frame_creem_long2.png");
+  background-image: url("/src/lib/decorations/frame_creem_long2.png");
   background-size: 100%;
   width: 13rem;
   height: 3rem;
@@ -146,7 +146,7 @@ button {
 
 .frame_creem_logo {
   position: absolute;
-  background-image: url("./lib/decorations/frame_creem_logo.png");
+  background-image: url("/src/lib/decorations/frame_creem_logo.png");
   background-size: cover;
   width: 10.2rem;
   height: 4.7rem;

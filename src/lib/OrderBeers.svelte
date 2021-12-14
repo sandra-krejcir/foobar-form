@@ -28,7 +28,7 @@ import { cart } from "./theCart";
 
   .frame_creem {
     position: absolute;
-    background-image: url("./lib/decorations/big_frame_cream.png");
+    background-image: url("/src/lib/decorations/big_frame_cream.png");
     background-size: 100%;
     background-repeat: no-repeat;
     width: 8.5rem;

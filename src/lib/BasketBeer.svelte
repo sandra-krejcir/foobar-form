@@ -121,7 +121,7 @@ import { cart } from "./theCart";
 
   .line {
     /* border-bottom: 1px solid #801b16; */
-    background-image: url("./lib/decorations/line2.png");
+    background-image: url("/src/lib/decorations/line2.png");
     background-size: cover;
     height: 0.4rem;
     width: 5rem;

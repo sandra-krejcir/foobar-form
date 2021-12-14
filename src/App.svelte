@@ -286,7 +286,7 @@
 
   .total .line {
     margin-top: 0;
-    background-image: url("./lib/decorations/line2.png");
+    background-image: url("/src/lib/decorations/line2.png");
     height: 0.4rem;
     width: 5rem;
   }
@@ -333,7 +333,7 @@
 
   .line {
     /* border-bottom: 1px solid #801b16; */
-    background-image: url("./lib/decorations/line_creem.png");
+    background-image: url("/src/lib/decorations/line_creem.png");
     background-size: cover;
     height: 1rem;
     width: 11rem;
