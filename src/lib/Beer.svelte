@@ -17,19 +17,19 @@
 <div class="beer">
   <li>
     <div class="img_container">
-      <img src="/src/lib/beerImg/{beer.label}" alt="beer logo" />
+      <img src="./lib/beerImg/{beer.label}" alt="beer logo" />
       <div class="frame_cream" />
     </div>
     <h2>{beer.name}</h2>
     <div class="tap_container">
       <div>
         <p>Currently</p>
-        <img class="line flip" src="/src/lib/decorations/line.png" alt="line" />
+        <img class="line flip" src="./lib/decorations/line.png" alt="line" />
       </div>
-      <img class="tap_icon" src="/src/lib/icons/tap.png" alt="tap icon" />
+      <img class="tap_icon" src="./lib/icons/tap.png" alt="tap icon" />
       <div>
         <p>On the Tap</p>
-        <img class="line" src="/src/lib/decorations/line.png" alt="line" />
+        <img class="line" src="./lib/decorations/line.png" alt="line" />
       </div>
     </div>
     <button class="about_button" on:click={moreInfo}>About {beer.name}</button>
@@ -42,20 +42,20 @@
       <p>{beer.description.overallImpression}</p>
     </div>
     <div class="curls">
-      <img class="curl1 flip" src="/src/lib/decorations/curl2.png" alt="curl" />
+      <img class="curl1 flip" src="./lib/decorations/curl2.png" alt="curl" />
       <div>
         <p>This beer is a</p>
         <p class="category">{beer.category}</p>
       </div>
-      <img class="curl1" src="/src/lib/decorations/curl2.png" alt="curl" />
+      <img class="curl1" src="./lib/decorations/curl2.png" alt="curl" />
     </div>
     <div class="curls">
-        <img class="curl2" src="/src/lib/decorations/curl1.png" alt="curl" />
+        <img class="curl2" src="./lib/decorations/curl1.png" alt="curl" />
       <div class="procent_container">
         <p class="procent">{beer.alc}%</p>
         <p>Alchohol</p>
       </div>
-      <img class="curl2 flip" src="/src/lib/decorations/curl1.png" alt="curl" />
+      <img class="curl2 flip" src="./lib/decorations/curl1.png" alt="curl" />
     </div>
     <div class="banner">
       <div class="amount_container">
@@ -132,7 +132,7 @@
 
   .frame_cream {
     position: absolute;
-    background-image: url("/src/lib/decorations/big_frame_cream.png");
+    background-image: url("./lib/decorations/big_frame_cream.png");
     background-size: 100%;
     width: 10.9rem;
     height: 12.5rem;
@@ -215,7 +215,7 @@
   }
 
   .banner {
-    background-image: url("/src/lib/decorations/banner.png");
+    background-image: url("./lib/decorations/banner.png");
     background-size: cover;
     height: 4.25rem;
     width: 20rem;

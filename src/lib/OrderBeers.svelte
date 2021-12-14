@@ -6,7 +6,7 @@ import { cart } from "./theCart";
 {#each $cart as beer}
   <li>
     <div class="img_container">
-      <img src="/src/lib/beerImg/{beer.logo}" alt="beer logo" />
+      <img src="./lib/beerImg/{beer.logo}" alt="beer logo" />
       <div class="frame_creem" />
       <p>{beer.name}</p>
       <div>
@@ -28,7 +28,7 @@ import { cart } from "./theCart";
 
   .frame_creem {
     position: absolute;
-    background-image: url("/src/lib/decorations/big_frame_cream.png");
+    background-image: url("./lib/decorations/big_frame_cream.png");
     background-size: 100%;
     background-repeat: no-repeat;
     width: 8.5rem;

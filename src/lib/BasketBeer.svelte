@@ -12,7 +12,7 @@ import { cart } from "./theCart";
   {#each $cart as beer}
     <div class="item_container">
       <div class="img_container">
-        <img src="/src/lib/beerImg/{beer.logo}" alt="beer logo" />
+        <img src="./lib/beerImg/{beer.logo}" alt="beer logo" />
         <!-- <img src={imageSource} alt="beer logo" /> -->
         <div class="frame_green" />
       </div>
@@ -77,7 +77,7 @@ import { cart } from "./theCart";
 
   .frame_green {
     position: absolute;
-    background-image: url("/src/lib/decorations/frame_green.png");
+    background-image: url("./lib/decorations/frame_green.png");
     background-size: 100%;
     background-repeat: no-repeat;
     width: 5.4rem;
@@ -121,7 +121,7 @@ import { cart } from "./theCart";
 
   .line {
     /* border-bottom: 1px solid #801b16; */
-    background-image: url("/src/lib/decorations/line2.png");
+    background-image: url("./lib/decorations/line2.png");
     background-size: cover;
     height: 0.4rem;
     width: 5rem;

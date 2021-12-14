@@ -39,10 +39,10 @@
 <h2>Payment Details</h2>
 <form id="theForm">
   <div class="button_conatiner">
-    <img class="line1" src="/src/lib/decorations/line3.png" alt="line3" />
+    <img class="line1" src="./lib/decorations/line3.png" alt="line3" />
     <button class="pay_button" type="button">Pay in person</button>
     <button class="pay_button" type="button">MobilePay</button>
-    <img class="line2" src="/src/lib/decorations/line3.png" alt="line3" />
+    <img class="line2" src="./lib/decorations/line3.png" alt="line3" />
   </div>
   <p>Or</p>
   <div>
@@ -53,6 +53,7 @@
       id="cardHolder"
       value=""
       placeholder="John Doe"
+      pattern="^\b(?!.*\.{2})[a-zA-Z.]+(?:\s[a-zA-Z.]+)\b$"
       required
     />
     <label for="cardHolder">Card Holder</label>
@@ -60,11 +61,10 @@
       <div>
         <input
           type="text"
-          minlength="20"
-          maxlength="20"
+          minlength="16"
+          maxlength="16"
           name="cardNumber"
           id="cardNumber"
-          pattern="[:digit:]"
           value=""
           placeholder="XXXX-XXXX-XXXX-XXXX"
         />
@@ -217,7 +217,7 @@
   } */
   .line {
     /* border-bottom: 1px solid #801b16; */
-    background-image: url("/src/lib/decorations/line2.png");
+    background-image: url("./lib/decorations/line2.png");
     background-size: cover;
     height: 0.4rem;
     width: 5rem;
