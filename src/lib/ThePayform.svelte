@@ -37,10 +37,10 @@
 <h2>Payment Details</h2>
 <form>
   <div class="button_conatiner">
-    <img class="line1" src="/src/lib/decorations/line3.png" alt="line3" />
+    <img class="line1" src="./src/lib/decorations/line3.png" alt="line3" />
     <button class="pay_button" type="button">Pay in person</button>
     <button class="pay_button" type="button">MobilePay</button>
-    <img class="line2" src="/src/lib/decorations/line3.png" alt="line3" />
+    <img class="line2" src="./src/lib/decorations/line3.png" alt="line3" />
   </div>
   <p>Or</p>
   <div>

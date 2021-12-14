@@ -88,12 +88,12 @@
       </div>
     </div>
     <div class="button_container">
-      <button type="submit">Create Account</button>
+      <button type="button">Create Account</button>
       <div class="frame_creem_long" />
     </div>
   </form>
 </div>
-<p class="back">Go Back</p>
+<slot></slot>
 
 <style>
   h1 {
