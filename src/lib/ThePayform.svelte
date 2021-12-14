@@ -53,7 +53,7 @@
       id="cardHolder"
       value=""
       placeholder="John Doe"
-      pattern="^\b(?!.*\.{2})[a-zA-Z.]+(?:\s[a-zA-Z.]+)\b$"
+     
       required
     />
     <label for="cardHolder">Card Holder</label>
