@@ -48,7 +48,9 @@
     </div>
 
     <div class:hidden={!creatingOn}>
-      <CreateAccount />
+      <CreateAccount>
+        <p class="back" on:click={() => (creatingOn = !creatingOn)}>Go Back</p>
+      </CreateAccount>
     </div>
   </section>
 

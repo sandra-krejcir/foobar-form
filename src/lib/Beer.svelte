@@ -55,7 +55,7 @@
         <p class="procent">{beer.alc}%</p>
         <p>Alchohol</p>
       </div>
-      <img class="curl2 flip" src="/src/lib/decorations/curl1.png" alt="curl" />
+      <img class="curl2 flip" src="" alt="curl" />
     </div>
     <div class="banner">
       <div class="amount_container">
@@ -206,6 +206,7 @@
   .curl2 {
     height: 3rem;
     width: 5rem;
+    background-image: URL(/src/lib/decorations/curl1.png);
   }
 
   .procent_container {
