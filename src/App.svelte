@@ -1,6 +1,5 @@
 <script>
   import style from "./lib/global.css";
-  import logo from "./assets/svelte.png";
   import Payform from "./lib/ThePayform.svelte";
   import ScrollBeer from "./lib/ScrollBeer.svelte";
   import OrderBeers from "./lib/OrderBeers.svelte";
@@ -46,8 +45,10 @@
       </Login>
     </div>
 
-    <div class:hidden={!creatingOn}>
-      <CreateAccount />
+    <div class="hideLog" class:hideRis={!creatingOn}>
+      <CreateAccount>
+        <p on:click={() => (creatingOn = !creatingOn)}>Go Back</p>
+      </CreateAccount>
     </div>
   </section>
 

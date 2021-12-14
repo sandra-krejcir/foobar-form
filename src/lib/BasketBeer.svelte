@@ -12,7 +12,7 @@ import { cart } from "./theCart";
   {#each $cart as beer}
     <div class="item_container">
       <div class="img_container">
-        <img src="/src/lib/beerImg/{beer.logo}" alt="beer logo" />
+        <img src="./lib/beerImg/{beer.logo}" alt="beer logo" />
         <!-- <img src={imageSource} alt="beer logo" /> -->
         <div class="frame_green" />
       </div>
