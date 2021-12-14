@@ -1,6 +1,5 @@
 <script>
   import style from "./lib/global.css";
-  import logo from "./assets/svelte.png";
   import Payform from "./lib/ThePayform.svelte";
   import ScrollBeer from "./lib/ScrollBeer.svelte";
   import OrderBeers from "./lib/OrderBeers.svelte";
