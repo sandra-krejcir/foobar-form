@@ -9,10 +9,12 @@
   import CreateAccount from "./lib/CreateAccount.svelte";
   import ThankMessage from "./lib/ThankYou.svelte";
   import { cart } from "./lib/theCart";
+// import TotalPrice from "./lib/totalPrice.svelte";
 
   let paymentClicked = false;
   let creatingOn = false;
   let asGuest = false;
+  let totalPrice = localStorage.getItem("totalPrice");
 
   function returnMenu() {
     paymentClicked = !paymentClicked;
@@ -86,7 +88,7 @@
     <div class="order" class:hidden={paymentClicked}>
       <BasketBeer>
         <div class="total">
-          <p>Total: $</p>
+          <p>Total: {totalPrice}$</p>
           <div class="line" />
         </div>
         <div class="button_container">

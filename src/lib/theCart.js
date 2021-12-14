@@ -2,6 +2,15 @@ import { writable } from "svelte/store";
 
 const sync = (newArray) => {
   let orders = JSON.stringify(newArray);
+  let totalprice = 0;
+
+  newArray.forEach((order) => {
+    console.log(order.amount);
+    totalprice = totalprice + order.amount * 45;
+    console.log(totalprice);
+    let totalPriceString = JSON.stringify(totalprice);
+    localStorage.setItem("totalPrice", totalPriceString);
+  });
   localStorage.setItem("orderBasket", orders);
 };
 
@@ -36,18 +45,12 @@ function createCart() {
     minusOne: (obj) =>
       update((cart) => {
         const cartCopy = [...cart];
-        const productQty = cartCopy.find(
-          (element) => element.name == obj.name
-        ).amount;
+        const productQty = cartCopy.find((element) => element.name == obj.name).amount;
         if (productQty > 1) {
-          const indexObj = cartCopy.findIndex(
-            (element) => element.name == obj.name
-          );
+          const indexObj = cartCopy.findIndex((element) => element.name == obj.name);
           cartCopy[indexObj].amount--;
         } else if (productQty === 1) {
-          const indexObj = cartCopy.findIndex(
-            (element) => element.name == obj.name
-          );
+          const indexObj = cartCopy.findIndex((element) => element.name == obj.name);
           cartCopy[indexObj].amount = 0;
           cartCopy.splice(indexObj, 1);
         }
