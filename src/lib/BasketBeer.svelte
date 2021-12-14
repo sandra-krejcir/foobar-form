@@ -77,7 +77,7 @@ import { cart } from "./theCart";
 
   .frame_green {
     position: absolute;
-    background-image: url("./lib/decorations/frame_green.png");
+    background-image: url("/src/lib/decorations/frame_green.png");
     background-size: 100%;
     background-repeat: no-repeat;
     width: 5.4rem;

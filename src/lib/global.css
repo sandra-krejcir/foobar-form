@@ -11,8 +11,8 @@ body {
 /*FONTS*/
 h1 {
   font-family: "Hello Paris Serif";
-  src: url("./fonts/HelloParisSerif.woff2") format("woff2"),
-    url("./fonts/HelloParisSerif.woff") format("woff");
+  src: url("fonts/HelloParisSerif.woff2") format("woff2"),
+    url("fonts/HelloParisSerif.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   color: #f0e5c6;
