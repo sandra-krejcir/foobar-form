@@ -1,5 +1,5 @@
 <script>
-  import style from "./lib/global.css";
+  import style from "/src/lib/global.css";
   import Payform from "./lib/ThePayform.svelte";
   import ScrollBeer from "./lib/ScrollBeer.svelte";
   import OrderBeers from "./lib/OrderBeers.svelte";
@@ -124,10 +124,16 @@
 <style>
   /*SANDRA*/
 
-  :root {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  }
+  
+  h1 {
+  font-family: "Hello Paris Serif";
+  src: url("fonts/HelloParisSerif.woff2") format("woff2"),
+    url("fonts/HelloParisSerif.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  color: #f0e5c6;
+  font-size: 2rem;
+}
 
   .hidden {
     display: none;
@@ -194,6 +200,7 @@
     line-height: 1.35;
   } */
 
+  
   @media (max-width: 480px) {
     h1 {
       max-width: none;
