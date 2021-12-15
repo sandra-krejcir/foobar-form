@@ -12,7 +12,8 @@
 
   if (tapSelected) {
     document.querySelector("#firstSelect").classList.remove("line")
-
+  }
+  
   onMount(async () => {
     const res = await fetch(`https://foobar-databar.herokuapp.com/`);
     bar = await res.json();
