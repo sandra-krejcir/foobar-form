@@ -42,11 +42,12 @@ function changeSelection () {
   tapSelected = !tapSelected;
 
   if (allSelected) {
-    document.querySelector("#firstSelect").classList.add("line1");
-    document.querySelector("#secondSelect").classList.remove("line2");
+    document.querySelector("#firstSelect").classList.add("line");
+    document.querySelector("#secondSelect").classList.remove("line");
+    
   } else if (tapSelected) {
-    document.querySelector("#firstSelect").classList.remove("line1");
-    document.querySelector("#secondSelect").classList.add("line2");
+    document.querySelector("#firstSelect").classList.remove("line");
+    document.querySelector("#secondSelect").classList.add("line");
   }
 }
 </script>
@@ -57,7 +58,7 @@ function changeSelection () {
     <li class="click_me" id="firstSelect" on:click={changeSelection}>
       Full selection
     </li>
-    <li class="click_me line2" id="secondSelect" on:click={changeSelection}>
+    <li class="click_me line" id="secondSelect" on:click={changeSelection}>
       On today's tap
     </li>
   </ul>
@@ -113,11 +114,11 @@ function changeSelection () {
     list-style: none;
   }
 
-  .line1 {
+  .line {
     text-decoration: underline;
   }
 
-  .line2 {
+  .underline {
     text-decoration: underline;
   }
 
