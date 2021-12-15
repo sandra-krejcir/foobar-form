@@ -10,10 +10,8 @@
   let allSelected = false;
   let tapSelected = true;
 
-  if (tapSelected) {
-    document.querySelector("#firstSelect").classList.remove("line")
-  }
-  
+
+
   onMount(async () => {
     const res = await fetch(`https://foobar-databar.herokuapp.com/`);
     bar = await res.json();
@@ -56,7 +54,7 @@ function changeSelection () {
 <div>
   <span />
   <ul class="firstFilter">
-    <li class="click_me line" id="firstSelect" on:click={changeSelection}>
+    <li class="click_me" id="firstSelect" on:click={changeSelection}>
       Full selection
     </li>
     <li class="click_me line" id="secondSelect" on:click={changeSelection}>
