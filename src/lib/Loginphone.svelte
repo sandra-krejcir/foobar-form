@@ -7,6 +7,7 @@
   <div>
     <h2>Log in for easier ordering</h2>
     <form>
+      <label for="phoneNumber">Phone Number</label>
       <input
         type="text"
         minlength="15"
@@ -15,7 +16,7 @@
         name="phoneNumber"
         placeholder="+45 XX XX XX XX"
       />
-      <label for="phoneNumber">Phone Number</label>
+      <label for="password">Password</label>
       <input
         type="password"
         minlength="8"
@@ -23,7 +24,7 @@
         name="password"
         placeholder="******"
       />
-      <label for="password">Password</label>
+
       <div class="button_container">
         <button type="submit">Log in</button>
         <div class="frame_creem_short" />

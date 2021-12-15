@@ -73,6 +73,7 @@ li {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+
 /*FONTS*/
 
 /*BUTTON*/
@@ -160,10 +161,6 @@ button {
 
 /*FORM*/
 
-label {
-  display: block;
-}
-
 input {
   display: block;
   background-color: #f0e5c600;
@@ -178,6 +175,87 @@ input {
 
 input::placeholder {
   color: #f0e5c6;
+}
+
+label {
+  margin-top: 1rem;
+  margin-bottom: -0.5rem;
+  margin-left: 0.5rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  backdrop-filter: blur(10px);
+  /* background-color: #801b16; */
+  width: fit-content;
+  z-index: 100;
+  display: block;
+}
+
+label[for="cardCvc"],
+[for="cardExp"] {
+  padding: 0;
+  margin-left: 0.2rem;
+}
+
+/* check box*/
+[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+[type="checkbox"] + label {
+  position: relative;
+  padding-left: 30px;
+  display: flex;
+  line-height: 25px;
+  backdrop-filter: none;
+  padding-bottom: 1rem;
+}
+
+[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  outline: 2px solid #f0e5c6;
+  border-radius: 100%;
+  left: 8px;
+  top: 8px;
+}
+
+[type="checkbox"]:checked + label::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  outline: 2px solid #466433;
+  border-radius: 100%;
+  left: 8px;
+  top: 8px;
+}
+
+[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  left: 8px;
+  top: 8px;
+  background-image: url(/src/lib/icons/check.png);
+  background-size: contain;
+}
+
+/*check box */
+
+.gray {
+  filter: grayscale(100);
+}
+
+.click_me {
+  color: #fef8e9;
 }
 
 /*FORM*/

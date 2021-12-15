@@ -10,6 +10,7 @@
   </p>
   <form>
     <div>
+      <label for="phoneNumber">Phone Number</label>
       <input
         type="text"
         minlength="15"
@@ -18,9 +19,9 @@
         name="phoneNumber"
         placeholder="+45 XX XX XX XX"
       />
-      <label for="phoneNumber">Phone Number</label>
     </div>
     <div>
+      <label for="password">Password</label>
       <input
         type="password"
         minlength="8"
@@ -28,10 +29,10 @@
         name="password"
         placeholder="*****"
       />
-      <label for="password">Password</label>
     </div>
     <p>Enter your card info once, and save time ordering</p>
     <div>
+      <label for="cardHolder">Card Holder</label>
       <input
         type="text"
         minlength="2"
@@ -39,10 +40,10 @@
         id="cardHolder"
         placeholder="John Doe"
       />
-      <label for="cardHolder">Card Holder</label>
     </div>
     <div class="card_info">
       <div>
+        <label for="cardNumber">Card Number</label>
         <input
           type="text"
           minlength="20"
@@ -51,9 +52,9 @@
           id="cardNumber"
           placeholder="XXXX-XXXX-XXXX-XXXX"
         />
-        <label for="cardNumber">Card Number</label>
       </div>
       <div>
+        <label for="cardExp">Expires</label>
         <input
           type="text"
           minlength="5"
@@ -62,9 +63,9 @@
           id="cardExp"
           placeholder="mm/yy"
         />
-        <label for="cardExp">Expires</label>
       </div>
       <div>
+        <label for="cardCvc">CVC</label>
         <input
           type="text"
           minlength="3"
@@ -73,18 +74,21 @@
           id="cardCvc"
           placeholder="mm/yy"
         />
-        <label for="cardCvc">CVC</label>
       </div>
     </div>
 
     <div class="terms_news_container">
       <div class="news">
         <input type="checkbox" id="newsletter" name="newsletter" />
-        <p>I want messages with special offers</p>
+        <label name="newsletter" for="newsletter"
+          >I want messages with special offers</label
+        >
       </div>
       <div class="terms">
         <input type="checkbox" id="terms" name="terms" />
-        <p>I Agree to the Terms and Conditions.</p>
+        <label name="terms" for="terms"
+          >I Agree to the Terms and Conditions.</label
+        >
       </div>
     </div>
     <div class="button_container">
@@ -148,10 +152,6 @@
   #phoneNumber,
   #password {
     width: 16.5rem;
-  }
-
-  .terms_news_container {
-    margin: 2rem;
   }
 
   .terms,
