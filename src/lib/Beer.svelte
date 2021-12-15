@@ -7,8 +7,6 @@
     hidden = !hidden;
   }
 
- let totalAmount;
- console.log(totalAmount)
 
 //   const beerNameWithoutSpaces = beer.name.replaceAll(" ", "").toLowerCase();
 //   const imageSource = `/src/lib/beerImg/${beerNameWithoutSpaces}.png`;

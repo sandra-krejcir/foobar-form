@@ -7,6 +7,8 @@
 
   let bar;
   let fullSelection = false;
+  let allSelected = false;
+  let tapSelected = true;
 
   onMount(async () => {
     const res = await fetch(`https://foobar-databar.herokuapp.com/`);
@@ -44,13 +46,26 @@ $: gotData = beers.length > 0 && bar && beers.map(addToArray);
 console.log(beersOnTapArray)
   }
 
+function changeSelection () {
+  fullSelection = !fullSelection;
+  allSelected = !allSelected;
+  tapSelected = !tapSelected;
+
+  if (allSelected) {
+    document.querySelector("#firstSelect").classList.add("line");
+    document.querySelector("#secondSelect").classList.remove("line");
+  } else if (tapSelected) {
+    document.querySelector("#firstSelect").classList.remove("line");
+    document.querySelector("#secondSelect").classList.add("line");
+  }
+}
 </script>
 
 <div>
   <span />
   <ul class="firstFilter">
-    <li on:click={() => (fullSelection = !fullSelection)}>Full selection</li>
-    <li on:click={() => (fullSelection = !fullSelection)}>On today's tap</li>
+    <li id="firstSelect" on:click={changeSelection}>Full selection</li>
+    <li class="line" id="secondSelect" on:click={changeSelection}>On today's tap</li>
   </ul>
   <ul class="secondFilter">
     <li>All</li>
@@ -100,6 +115,10 @@ console.log(beersOnTapArray)
 
   ul {
     list-style: none;
+  }
+
+  .line {
+    text-decoration: underline;
   }
 
   @media (max-width: 480px) {

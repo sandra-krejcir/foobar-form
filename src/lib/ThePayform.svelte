@@ -115,7 +115,7 @@
     <div class="line" />
   </div>
   <div class="button_container">
-    <button class="sendOrder" type="submit" on:submit={postIt}> Complete Order</button>
+    <button class="sendOrder" type="button" on:click={postIt}> Complete Order</button>
     <div class="frame" />
   </div>
 </form>
