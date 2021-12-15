@@ -46,6 +46,7 @@
   </div>
   <p>Or</p>
   <div>
+    <label for="cardHolder">Card Holder</label>
     <input
       type="text"
       minlength="2"
@@ -56,9 +57,10 @@
      
       required
     />
-    <label for="cardHolder">Card Holder</label>
+
     <div class="card_info">
       <div>
+        <label for="cardNumber">Card Number</label>
         <input
           type="text"
           minlength="20"
@@ -68,9 +70,9 @@
           value=""
           placeholder="XXXX-XXXX-XXXX-XXXX"
         />
-        <label for="cardNumber">Card Number</label>
       </div>
       <div>
+        <label for="cardExp">Expires</label>
         <input
           type="text"
           minlength="5"
@@ -80,9 +82,9 @@
           value=""
           placeholder="mm/yy"
         />
-        <label for="cardExp">Expires</label>
       </div>
       <div>
+        <label for="cardCvc">CVC</label>
         <input
           type="text"
           minlength="3"
@@ -92,9 +94,9 @@
           value=""
           placeholder="000"
         />
-        <label for="cardCvc">CVC</label>
       </div>
     </div>
+    <label for="phoneNumber">Phone Number</label>
     <input
       type="text"
       minlength="15"
@@ -103,11 +105,18 @@
       value=""
       placeholder="+45 XX XX XX XX"
     />
-    <label for="phoneNumber">Phone Number</label>
+
     <p class="recept">You receive your recept via a Text</p>
     <div class="terms_container">
+<<<<<<< HEAD
       <input type="checkbox" id="terms" name="terms" required value=""/>
       <p class="terms">I Agree to the Terms and Conditions.</p>
+=======
+      <input type="checkbox" id="terms" name="terms" />
+      <label name="terms" for="terms"
+        >I Agree to the Terms and Conditions.</label
+      >
+>>>>>>> finishing-sprint-on-design
     </div>
   </div>
   <div class="total">
@@ -197,10 +206,6 @@
     align-items: center;
   }
 
-  .terms {
-    font-size: 1rem;
-  }
-
   .total {
     display: grid;
     justify-content: center;
@@ -247,5 +252,9 @@
 
   .button_container {
     margin-left: 1rem;
+  }
+
+  [type="checkbox"] + label::before {
+    outline: 2px solid #801b16;
   }
 </style>
