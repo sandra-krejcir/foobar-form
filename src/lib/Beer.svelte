@@ -60,13 +60,8 @@
         <span
           class="click_me"
           on:click={() => {
-            cart.add({
-              name: beer.name,
-              category: beer.category,
-              price: beer.price,
-              logo: beer.label,
-            });
-          }}>+</span
+            cart.minusOne(beer);
+          }}>-</span
         >
         <span class="amount">
           {#if $cart.findIndex((element) => element.name == beer.name) === -1}
@@ -80,9 +75,15 @@
         <span
           class="click_me"
           on:click={() => {
-            cart.minusOne(beer);
-          }}>-</span
+            cart.add({
+              name: beer.name,
+              category: beer.category,
+              price: beer.price,
+              logo: beer.label,
+            });
+          }}>+</span
         >
+        
       </div>
       <p class="price">{#if $cart.findIndex((element) => element.name == beer.name) === -1}
         00.00$

@@ -32,7 +32,7 @@
   }
 
   .theTimer {
-    background-image: url("./lib/decorations/cirkle.png");
+    background-image: url("./src/lib/decorations/cirkle.png");
     background-size: cover;
     width: 20rem;
     height: 7.5rem;

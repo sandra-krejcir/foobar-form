@@ -58,7 +58,7 @@
   <div class="button_conatiner">
     <img class="line1" src="./lib/decorations/line3.png" alt="line3" />
     <button class="pay_button" type="button" id="firstSelect" on:click={changeSelection}>Pay in person</button>
-    <button class="pay_button coloring" type="button" id="secondSelect" on:click={changeSelection}>MobilePay</button>
+    <button class="pay_button " type="button" id="secondSelect" on:click={changeSelection}>MobilePay</button>
     <img class="line2" src="./lib/decorations/line3.png" alt="line3" />
   </div>
   <p>Or</p>
@@ -80,7 +80,7 @@
         <label for="cardNumber">Card Number</label>
         <input
           type="text"
-          minlength="20"
+          minlength="16"
           maxlength="20"
           name="cardNumber"
           id="cardNumber"
@@ -92,7 +92,7 @@
         <label for="cardExp">Expires</label>
         <input
           type="text"
-          minlength="5"
+          minlength="4"
           maxlength="5"
           name="cardExp"
           id="cardExp"
@@ -116,7 +116,8 @@
     <label for="phoneNumber">Phone Number</label>
     <input
       type="text"
-      minlength="15"
+      minlength="11"
+      maxlength="15"
       name="phoneNumber"
       id="phoneNumber"
       value=""
@@ -163,9 +164,7 @@
     width: 15rem;
   }
 
-  .coloring {
-    border: 1px solid green;
-  }
+  
 
   form {
     display: grid;

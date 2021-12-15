@@ -29,6 +29,13 @@ import { cart } from "./theCart";
             <span
               class="box"
               on:click={() => {
+                cart.minusOne(beer);
+              }}>-</span
+            >
+            <span class="amount">{beer.amount}</span>
+            <span
+              class="box"
+              on:click={() => {
                 cart.add({
                   name: beer.name,
                   category: beer.category,
@@ -37,13 +44,7 @@ import { cart } from "./theCart";
                 });
               }}>+</span
             >
-            <span class="amount">{beer.amount}</span>
-            <span
-              class="box"
-              on:click={() => {
-                cart.minusOne(beer);
-              }}>-</span
-            >
+            
           </div>
         </div>
         <div class="line_it_up">
