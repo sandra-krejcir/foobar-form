@@ -60,6 +60,8 @@ import { cart } from "./theCart";
     margin-top: 0;
   }
 
+  
+
   @media only screen and (min-width: 600px) {
     li {
       padding-top: 3rem;
