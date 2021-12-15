@@ -2,6 +2,15 @@ import { writable } from "svelte/store";
 
 const sync = (newArray) => {
   let orders = JSON.stringify(newArray);
+  let totalprice = 0;
+
+  newArray.forEach((order) => {
+    console.log(order.amount);
+    totalprice = totalprice + order.amount * 45;
+    console.log(totalprice);
+    let totalPriceString = JSON.stringify(totalprice);
+    localStorage.setItem("totalPrice", totalPriceString);
+  });
   localStorage.setItem("orderBasket", orders);
 };
 

@@ -1,5 +1,22 @@
 <script>
   import { cart } from "./theCart";
+  export let sumPrice;
+
+  let cashSelected = false;
+  let mobileSelected = true;
+
+  function changeSelection () {
+  cashSelected = !cashSelected;
+  mobileSelected = !mobileSelected;
+
+  if (cashSelected) {
+    document.querySelector("#firstSelect").classList.add("coloring");
+    document.querySelector("#secondSelect").classList.remove("coloring");
+  } else if (mobileSelected) {
+    document.querySelector("#firstSelect").classList.remove("coloring");
+    document.querySelector("#secondSelect").classList.add("coloring");
+  }
+  }
  
   
   async function postIt() {
@@ -37,11 +54,11 @@
   <slot />
 </div>
 <h2>Payment Details</h2>
-<form id="theForm">
+<form id="theForm" on:submit|preventDefault="{postIt}">
   <div class="button_conatiner">
     <img class="line1" src="./lib/decorations/line3.png" alt="line3" />
-    <button class="pay_button" type="button">Pay in person</button>
-    <button class="pay_button" type="button">MobilePay</button>
+    <button class="pay_button" type="button" id="firstSelect" on:click={changeSelection}>Pay in person</button>
+    <button class="pay_button coloring" type="button" id="secondSelect" on:click={changeSelection}>MobilePay</button>
     <img class="line2" src="./lib/decorations/line3.png" alt="line3" />
   </div>
   <p>Or</p>
@@ -108,18 +125,18 @@
 
     <p class="recept">You receive your recept via a Text</p>
     <div class="terms_container">
-      <input type="checkbox" id="terms" name="terms" required value=""/>
+      <input type="checkbox" id="terms" name="terms" value=""/>
       <label name="terms" for="terms"
         >I Agree to the Terms and Conditions.</label
       >
     </div>
   </div>
   <div class="total">
-    <p>Total: $</p>
+    <p>Total: {sumPrice} $</p>
     <div class="line" />
   </div>
   <div class="button_container">
-    <button class="sendOrder" type="button" on:click={postIt}> Complete Order</button>
+    <button class="sendOrder" type="submit"> Complete Order</button>
     <div class="frame" />
   </div>
 </form>
@@ -136,6 +153,7 @@
     justify-content: center;
   }
 
+  
   .pay_button {
     background: rgba(255, 0, 0, 0);
     color: #801b16;
@@ -143,6 +161,10 @@
     border-radius: 10rem;
     margin: 0.5rem;
     width: 15rem;
+  }
+
+  .coloring {
+    border: 1px solid green;
   }
 
   form {

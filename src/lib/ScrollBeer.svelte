@@ -3,15 +3,7 @@
   import Beer from "./Beer.svelte";
 
   let beers = [];
-  let types = [
-    "IPA",
-    "Hefeweizen",
-    "Oktoberfest",
-    "European Lager",
-    "Stout",
-    "Belgian Specialty Ale",
-    "California Common",
-  ];
+  let types = ["IPA","Hefeweizen","Oktoberfest","European Lager","Stout","Belgian Specialty Ale","California Common"];
 
   let bar;
   let fullSelection = false;
@@ -69,11 +61,9 @@ function changeSelection () {
   </ul>
   <ul class="secondFilter">
     <li>All</li>
-    <div class="type_container">
       {#each types as type}
         <li class="type">{type}</li>
       {/each}
-    </div>
   </ul>
 </div>
 
@@ -127,11 +117,6 @@ function changeSelection () {
 
   @media (max-width: 480px) {
 
-    .type_container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 
   .type {
     text-align: center;

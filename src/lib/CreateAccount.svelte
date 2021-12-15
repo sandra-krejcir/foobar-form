@@ -18,6 +18,7 @@
         id="phoneNumber"
         name="phoneNumber"
         placeholder="+45 XX XX XX XX"
+        required
       />
     </div>
     <div>
@@ -28,6 +29,7 @@
         id="password"
         name="password"
         placeholder="*****"
+        required
       />
     </div>
     <p>Enter your card info once, and save time ordering</p>
@@ -39,6 +41,7 @@
         name="cardHolder"
         id="cardHolder"
         placeholder="John Doe"
+        required
       />
     </div>
     <div class="card_info">
@@ -51,6 +54,7 @@
           name="cardNumber"
           id="cardNumber"
           placeholder="XXXX-XXXX-XXXX-XXXX"
+          required
         />
       </div>
       <div>
@@ -62,6 +66,7 @@
           name="cardExp"
           id="cardExp"
           placeholder="mm/yy"
+          required
         />
       </div>
       <div>
@@ -73,6 +78,7 @@
           name="cardCvc"
           id="cardCvc"
           placeholder="mm/yy"
+          required
         />
       </div>
     </div>
@@ -85,14 +91,14 @@
         >
       </div>
       <div class="terms">
-        <input type="checkbox" id="terms" name="terms" />
+        <input type="checkbox" id="terms" name="terms" required />
         <label name="terms" for="terms"
           >I Agree to the Terms and Conditions.</label
         >
       </div>
     </div>
     <div class="button_container">
-      <button type="button">Create Account</button>
+      <button type="submit">Create Account</button>
       <div class="frame_creem_long" />
     </div>
   </form>

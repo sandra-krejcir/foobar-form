@@ -1,14 +1,20 @@
 <script>
-  import Beer from "./Beer.svelte";
+  import { empty } from "svelte/internal";
+import Beer from "./Beer.svelte";
 import { cart } from "./theCart";
+
+
 
   // const beerNameWithoutSpaces = beer.name.replaceAll(" ", "").toLowerCase();
   // const imageSource = `/src/lib/beerImg/${beerNameWithoutSpaces}.png`;
 </script>
 
-<p class="nav_tekst_type2">Add more Beer</p>
+
 <h2>Order</h2>
 <div class="scroll">
+  {#if $cart.length === 0}
+  <p class="center">* Your cart is currently empty. *</p>
+  {/if}
   {#each $cart as beer}
     <div class="item_container">
       <div class="img_container">
@@ -119,6 +125,11 @@ import { cart } from "./theCart";
     margin-bottom: 0;
   }
 
+  .center {
+    margin-left: 5rem;
+  
+  }
+
   .line {
     /* border-bottom: 1px solid #801b16; */
     background-image: url("/src/lib/decorations/line2.png");
@@ -128,11 +139,7 @@ import { cart } from "./theCart";
     margin-top: 2rem;
   }
 
-  .nav_tekst_type2 {
-    text-align: center;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-  }
+ 
 
   @media only screen and (min-width: 600px) {
     .scroll {
@@ -140,9 +147,6 @@ import { cart } from "./theCart";
       overflow: scroll;
     }
 
-    .nav_tekst_type2 {
-      display: none;
-    }
 
     .line {
       margin-top: 2.5rem;

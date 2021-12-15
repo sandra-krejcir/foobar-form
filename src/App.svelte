@@ -12,6 +12,16 @@
   let paymentClicked = false;
   let creatingOn = false;
   let asGuest = false;
+  
+
+  function getPrice() {
+    let totalPrice = localStorage.getItem("totalPrice");
+    if (totalPrice === null) {
+      return 0
+    } else {
+    return totalPrice
+  }
+  }
 
   function returnMenu() {
     paymentClicked = !paymentClicked;
@@ -52,7 +62,7 @@
     </div>
   </section>
 
-  <section
+  <section id="addMoreBeer"
     class="selection"
     class:hideRis={!asGuest}
     class:hidden={paymentClicked}
@@ -62,7 +72,7 @@
       <h1 class="logo">FooBar</h1>
       <div class="frame_creem_logo" />
       <ScrollBeer />
-      <p class="nav_tekst_type1">Edit order</p>
+      <a href="#editOrder"><p class="nav_tekst_type1">Edit order</p></a>
     </div>
   </section>
 
@@ -83,11 +93,12 @@
     </div>
   </section>
 
-  <section class="basket" class:hideRis={!asGuest}>
+  <section class="basket" class:hideRis={!asGuest} id="editOrder">
     <div class="order" class:hidden={paymentClicked}>
+      <a href="#addMoreBeer"><p class="nav_tekst_type3">Add more Beer</p></a>
       <BasketBeer>
         <div class="total">
-          <p>Total: $</p>
+          <p>Total: {getPrice()}$</p>
           <div class="line" />
         </div>
         <div class="button_container">
@@ -100,7 +111,7 @@
     </div>
 
     <div class="payment" class:hidden={!paymentClicked}>
-      <Payform>
+      <Payform sumPrice = {getPrice()}>
         <p
           class="nav_tekst_type2"
           on:click={() => (paymentClicked = !paymentClicked)}
@@ -146,6 +157,12 @@
     color: #801b16;
   }
 
+  .nav_tekst_type3 {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    color: #801b16;
+  }
   .hideLog {
     display: none;
   }
@@ -162,6 +179,13 @@
     grid-row-gap: 0px;
   }
 
+  a:link{
+    text-decoration: none;
+  }
+
+  a:hover {
+    color:rgba(70, 100, 51, 1) 0%,
+  }
   /* main {
     padding: 1em;
     margin: 0 auto;
@@ -283,6 +307,9 @@
     display: flex;
   }
 
+ 
+
+  /*BASKET*/
   .total {
     display: grid;
     justify-content: center;
@@ -301,9 +328,6 @@
     height: 0.4rem;
     width: 5rem;
   }
-
-  /*BASKET*/
-
   /*PAYMENT*/
 
   /* .payment {
@@ -401,6 +425,11 @@
     .payment {
       height: 100vh;
       background-color: #fef8e9;
+    }
+
+    
+    .nav_tekst_type3 {
+      display: none;
     }
 
     /*ANIMATION END*/
