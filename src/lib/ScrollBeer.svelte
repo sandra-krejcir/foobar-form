@@ -7,7 +7,7 @@
 
   let bar;
   let fullSelection = false;
-  let allSelected = true;
+  let allSelected = false;
   let tapSelected = true;
 
   onMount(async () => {
@@ -52,7 +52,7 @@ function changeSelection () {
 <div>
   <span />
   <ul class="firstFilter">
-    <li class="click_me" id="firstSelect" on:click={changeSelection}>
+    <li class="click_me line" id="firstSelect" on:click={changeSelection}>
       Full selection
     </li>
     <li class="click_me line" id="secondSelect" on:click={changeSelection}>
