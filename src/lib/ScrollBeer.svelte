@@ -7,7 +7,7 @@
 
   let bar;
   let fullSelection = false;
-  let allSelected = false;
+  let allSelected = true;
   let tapSelected = true;
 
   onMount(async () => {
