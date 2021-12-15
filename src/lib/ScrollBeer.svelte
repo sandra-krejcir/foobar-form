@@ -118,9 +118,6 @@ function changeSelection () {
     text-decoration: underline;
   }
 
-  .underline {
-    text-decoration: underline;
-  }
 
 
   @media (max-width: 480px) {
