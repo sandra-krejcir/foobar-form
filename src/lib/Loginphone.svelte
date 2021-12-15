@@ -1,9 +1,8 @@
 <section class="login">
   <!-- <img alt="logo"> -->
-  <div class="button_container">
-    <h1 class="logo">FooBar</h1>
-    <div class="frame_creem_logo" />
-  </div>
+
+  <h1 class="logo">FooBar</h1>
+
   <div>
     <h2>Log in for easier ordering</h2>
     <form>

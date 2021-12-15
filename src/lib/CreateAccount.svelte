@@ -1,8 +1,7 @@
 <!-- <img alt="logo" /> -->
-<div class="button_container">
-  <h1 class="logo">FooBar</h1>
-  <div class="frame_creem_logo" />
-</div>
+
+<h1 class="logo">FooBar</h1>
+
 <div class="create_account_container">
   <p class="bigger_font">
     Your phone number will be used to receive receipts and to log in. Make a
@@ -97,7 +96,7 @@
     </div>
   </form>
 </div>
-<slot></slot>
+<slot />
 
 <style>
   h1 {
@@ -168,11 +167,6 @@
     margin-bottom: 0;
   }
 
-
-  .frame_creem_logo {
-    top: -0.5rem;
-    left: 6.6rem;
-  }
   .frame_creem_long {
     width: 13.5rem;
   }

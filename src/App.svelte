@@ -58,12 +58,11 @@
     class:hidden={paymentClicked}
   >
     <!-- <img src={logo} alt="The company's logo" /> -->
-    <div class="button_container">
-      <h1 class="logo">FooBar</h1>
-      <div class="frame_creem_logo" />
-      <ScrollBeer />
-      <p class="nav_tekst_type1">Edit order</p>
-    </div>
+
+    <h1 class="logo">FooBar</h1>
+
+    <ScrollBeer />
+    <p class="nav_tekst_type1">Edit order</p>
   </section>
 
   <section
@@ -71,10 +70,8 @@
     class:hideRis={!asGuest}
     class:hidden={!paymentClicked}
   >
-    <div class="button_container">
-      <h1 class="logo">FooBar</h1>
-      <div class="frame_creem_logo" />
-    </div>
+    <h1 class="logo">FooBar</h1>
+
     <h2>Your Order</h2>
     <div>
       <ul class="makeGrid">
@@ -124,16 +121,15 @@
 <style>
   /*SANDRA*/
 
-  
   h1 {
-  font-family: "Hello Paris Serif";
-  src: url("fonts/HelloParisSerif.woff2") format("woff2"),
-    url("fonts/HelloParisSerif.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  color: #f0e5c6;
-  font-size: 2rem;
-}
+    font-family: "Hello Paris Serif";
+    src: url("fonts/HelloParisSerif.woff2") format("woff2"),
+      url("fonts/HelloParisSerif.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+
+    font-size: 2rem;
+  }
 
   .hidden {
     display: none;
@@ -200,7 +196,6 @@
     line-height: 1.35;
   } */
 
-  
   @media (max-width: 480px) {
     h1 {
       max-width: none;
@@ -256,7 +251,7 @@
 
   .selection h1 {
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     margin-left: auto !important;
     margin-right: auto !important;
   }
@@ -354,11 +349,6 @@
     margin-bottom: 0;
   }
 
-  .frame_creem_logo {
-    top: -0.5rem;
-    left: 6.6rem;
-  }
-
   /*DECORATIONS*/
 
   /*RESPONSIVE*/
@@ -369,13 +359,13 @@
       height: 100vh;
     }
 
-    .logo {
-      margin-left: 26rem !important;
-      margin-right: 26rem !important;
+    .selection h1 {
+      margin-bottom: 2rem;
     }
 
-    .frame_creem_logo {
-      left: 25.7rem;
+    .logo {
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
 
     .nav_tekst_type1 {

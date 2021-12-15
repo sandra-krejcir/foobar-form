@@ -1,7 +1,6 @@
 <script>
   import { cart } from "./theCart";
- 
-  
+
   async function postIt() {
     document.querySelector(".payment").classList.toggle("hidden");
     document.querySelector(".thankYou").classList.toggle("hidden");
@@ -54,7 +53,6 @@
       id="cardHolder"
       value=""
       placeholder="John Doe"
-     
       required
     />
 
@@ -108,15 +106,10 @@
 
     <p class="recept">You receive your recept via a Text</p>
     <div class="terms_container">
-<<<<<<< HEAD
-      <input type="checkbox" id="terms" name="terms" required value=""/>
-      <p class="terms">I Agree to the Terms and Conditions.</p>
-=======
-      <input type="checkbox" id="terms" name="terms" />
+      <input type="checkbox" id="terms" name="terms" required value="" />
       <label name="terms" for="terms"
         >I Agree to the Terms and Conditions.</label
       >
->>>>>>> finishing-sprint-on-design
     </div>
   </div>
   <div class="total">
@@ -124,7 +117,9 @@
     <div class="line" />
   </div>
   <div class="button_container">
-    <button class="sendOrder" type="submit" on:submit={postIt}> Complete Order</button>
+    <button class="sendOrder" type="submit" on:submit={postIt}>
+      Complete Order</button
+    >
     <div class="frame" />
   </div>
 </form>

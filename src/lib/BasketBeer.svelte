@@ -1,6 +1,6 @@
 <script>
   import Beer from "./Beer.svelte";
-import { cart } from "./theCart";
+  import { cart } from "./theCart";
 
   // const beerNameWithoutSpaces = beer.name.replaceAll(" ", "").toLowerCase();
   // const imageSource = `/src/lib/beerImg/${beerNameWithoutSpaces}.png`;
@@ -72,6 +72,7 @@ import { cart } from "./theCart";
 
   img {
     width: 5rem;
+    height: 5.9rem;
     margin-right: 0.5rem;
   }
 
