@@ -55,7 +55,7 @@
       minlength="2"
       name="cardHolder"
       id="cardHolder"
-      value=""
+      pattern="^[A-Z][a-z]*(\s([A-Z]|\([A-Z])[a-z\'\(\)]*)?((\s|\-)([A-Z]|\([A-Z])[a-z\'\(\)]*)?((\s|\-)([A-Z]|\([A-Z])[a-z\'\(\)]*)?((\s|\-)([A-Z]|\([A-Z])[a-z\'\(\)]*)?$"
       placeholder="John Doe"
       required
     />
@@ -64,49 +64,56 @@
       <div>
         <label for="cardNumber">Card Number</label>
         <input
-          type="text"
+          type="number"
           minlength="16"
-          maxlength="20"
+          maxlength="19"
           name="cardNumber"
           id="cardNumber"
-          value=""
           placeholder="XXXX-XXXX-XXXX-XXXX"
+          required
+          inputmode="numeric"
         />
       </div>
       <div>
         <label for="cardExp">Expires</label>
         <input
-          type="text"
-          minlength="4"
+          type="tekst"
+          minlength="5"
           maxlength="5"
           name="cardExp"
           id="cardExp"
-          value=""
           placeholder="mm/yy"
+          required
+          inputmode="decimal"
+          title="Must include '/' eg. 00/00"
         />
       </div>
       <div>
         <label for="cardCvc">CVC</label>
         <input
-          type="text"
+          type="number"
           minlength="3"
           maxlength="3"
           name="cardCvc"
           id="cardCvc"
-          value=""
           placeholder="000"
+          required
+          inputmode="numeric"
         />
       </div>
     </div>
     <label for="phoneNumber">Phone Number</label>
     <input
-      type="text"
-      minlength="11"
+      type="tel"
+      minlength="8"
       maxlength="15"
-      name="phoneNumber"
       id="phoneNumber"
-      value=""
+      name="phoneNumber"
+      pattern="(+)[0-9]{3}-[0-9]{3}-[0-9]{4}"
+      title="Must contain at least 8 numberes and bo more than 15 numbers"
       placeholder="+45 XX XX XX XX"
+      required
+      inputmode="tel"
     />
 
     <p class="recept">You receive your recept via a Text</p>
