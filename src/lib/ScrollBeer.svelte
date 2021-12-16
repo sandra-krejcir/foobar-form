@@ -71,7 +71,7 @@
   <ul class="doFlex">
     {#if fullSelection}
       {#each beersOnTapArray as beer}
-        <Beer {beer} onTap={true}/>
+        <Beer {beer} onTap={true} />
       {/each}
       {#each beersNotOnTapArray as beer}
         <div class="gray">
@@ -82,7 +82,7 @@
 
     {#if !fullSelection}
       {#each beersOnTapArray as beer}
-        <Beer {beer} onTap={true}/>
+        <Beer {beer} onTap={true} />
       {/each}
     {/if}
   </ul>
@@ -104,6 +104,7 @@
   .firstFilter,
   .secondFilter {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
   }
 
