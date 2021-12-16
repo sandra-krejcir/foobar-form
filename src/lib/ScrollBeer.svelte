@@ -3,14 +3,20 @@
   import Beer from "./Beer.svelte";
 
   let beers = [];
-  let types = ["IPA","Hefeweizen","Oktoberfest","European Lager","Stout","Belgian Specialty Ale","California Common"];
+  let types = [
+    "IPA",
+    "Hefeweizen",
+    "Oktoberfest",
+    "European Lager",
+    "Stout",
+    "Belgian Specialty Ale",
+    "California Common",
+  ];
 
   let bar;
   let fullSelection = false;
   let allSelected = false;
   let tapSelected = true;
-
-
 
   onMount(async () => {
     const res = await fetch(`https://foobar-databar.herokuapp.com/`);
@@ -36,20 +42,19 @@
     console.log(beersOnTapArray);
   }
 
-function changeSelection () {
-  fullSelection = !fullSelection;
-  allSelected = !allSelected;
-  tapSelected = !tapSelected;
+  function changeSelection() {
+    fullSelection = !fullSelection;
+    allSelected = !allSelected;
+    tapSelected = !tapSelected;
 
-  if (allSelected) {
-    document.querySelector("#firstSelect").classList.add("line");
-    document.querySelector("#secondSelect").classList.remove("line");
-    
-  } else if (tapSelected) {
-    document.querySelector("#firstSelect").classList.remove("line");
-    document.querySelector("#secondSelect").classList.add("line");
+    if (allSelected) {
+      document.querySelector("#firstSelect").classList.add("line");
+      document.querySelector("#secondSelect").classList.remove("line");
+    } else if (tapSelected) {
+      document.querySelector("#firstSelect").classList.remove("line");
+      document.querySelector("#secondSelect").classList.add("line");
+    }
   }
-}
 </script>
 
 <div>
@@ -64,9 +69,9 @@ function changeSelection () {
   </ul>
   <ul class="secondFilter">
     <li>All</li>
-      {#each types as type}
-        <li class="type">{type}</li>
-      {/each}
+    {#each types as type}
+      <li class="type">{type}</li>
+    {/each}
   </ul>
 </div>
 
@@ -118,13 +123,15 @@ function changeSelection () {
     text-decoration: underline;
   }
 
-
-
   @media (max-width: 480px) {
-
-
-  .type {
-    text-align: center;
+    .type {
+      text-align: center;
+    }
   }
-}
+
+  @media only screen and (min-width: 600px) {
+    .scroll_container {
+      padding-left: 14rem;
+    }
+  }
 </style>

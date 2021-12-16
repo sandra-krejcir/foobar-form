@@ -1,8 +1,7 @@
 <!-- <img alt="logo" /> -->
-<div class="button_container">
-  <h1 class="logo">FooBar</h1>
-  <div class="frame_creem_logo" />
-</div>
+
+<h1 class="logo">FooBar</h1>
+
 <div class="create_account_container">
   <p class="bigger_font">
     Your phone number will be used to receive receipts and to log in. Make a
@@ -12,13 +11,14 @@
     <div>
       <label for="phoneNumber">Phone Number</label>
       <input
-        type="text"
-        minlength="15"
+        type="number"
+        minlength="8"
         maxlength="15"
         id="phoneNumber"
         name="phoneNumber"
         placeholder="+45 XX XX XX XX"
         required
+        inputmode="numeric"
       />
     </div>
     <div>
@@ -48,37 +48,40 @@
       <div>
         <label for="cardNumber">Card Number</label>
         <input
-          type="text"
-          minlength="20"
+          type="number"
+          minlength="16"
           maxlength="20"
           name="cardNumber"
           id="cardNumber"
           placeholder="XXXX-XXXX-XXXX-XXXX"
           required
+          inputmode="numeric"
         />
       </div>
       <div>
         <label for="cardExp">Expires</label>
         <input
-          type="text"
+          type="tekst"
           minlength="5"
           maxlength="5"
           name="cardExp"
           id="cardExp"
           placeholder="mm/yy"
           required
+          inputmode="decimal"
         />
       </div>
       <div>
         <label for="cardCvc">CVC</label>
         <input
-          type="text"
+          type="number"
           minlength="3"
           maxlength="3"
           name="cardCvc"
           id="cardCvc"
           placeholder="mm/yy"
           required
+          inputmode="numeric"
         />
       </div>
     </div>
@@ -91,8 +94,8 @@
         >
       </div>
       <div class="terms">
-        <input type="checkbox" id="terms" name="terms" required />
-        <label name="terms" for="terms"
+        <input type="checkbox" id="terms_and_co" name="terms_and_co" />
+        <label name="terms_and_co" for="terms_and_co"
           >I Agree to the Terms and Conditions.</label
         >
       </div>
@@ -103,7 +106,7 @@
     </div>
   </form>
 </div>
-<slot></slot>
+<slot />
 
 <style>
   h1 {
@@ -174,11 +177,6 @@
     margin-bottom: 0;
   }
 
-
-  .frame_creem_logo {
-    top: -0.5rem;
-    left: 6.6rem;
-  }
   .frame_creem_long {
     width: 13.5rem;
   }

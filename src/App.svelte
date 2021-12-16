@@ -12,15 +12,14 @@
   let paymentClicked = false;
   let creatingOn = false;
   let asGuest = false;
-  
 
   function getPrice() {
     let totalPrice = localStorage.getItem("totalPrice");
     if (totalPrice === null) {
-      return 0
+      return 0;
     } else {
-    return totalPrice
-  }
+      return totalPrice;
+    }
   }
 
   function returnMenu() {
@@ -62,18 +61,18 @@
     </div>
   </section>
 
-  <section id="addMoreBeer"
+  <section
+    id="addMoreBeer"
     class="selection"
     class:hideRis={!asGuest}
     class:hidden={paymentClicked}
   >
     <!-- <img src={logo} alt="The company's logo" /> -->
-    <div class="button_container">
-      <h1 class="logo">FooBar</h1>
-      <div class="frame_creem_logo" />
-      <ScrollBeer />
-      <a href="#editOrder"><p class="nav_tekst_type1">Edit order</p></a>
-    </div>
+
+    <h1 class="logo">FooBar</h1>
+
+    <ScrollBeer />
+    <p class="nav_tekst_type1">Edit order</p>
   </section>
 
   <section
@@ -81,10 +80,8 @@
     class:hideRis={!asGuest}
     class:hidden={!paymentClicked}
   >
-    <div class="button_container">
-      <h1 class="logo">FooBar</h1>
-      <div class="frame_creem_logo" />
-    </div>
+    <h1 class="logo">FooBar</h1>
+
     <h2>Your Order</h2>
     <div>
       <ul class="makeGrid">
@@ -111,7 +108,7 @@
     </div>
 
     <div class="payment" class:hidden={!paymentClicked}>
-      <Payform sumPrice = {getPrice()}>
+      <Payform sumPrice={getPrice()}>
         <p
           class="nav_tekst_type2"
           on:click={() => (paymentClicked = !paymentClicked)}
@@ -135,16 +132,15 @@
 <style>
   /*SANDRA*/
 
-  
   h1 {
-  font-family: "Hello Paris Serif";
-  src: url("fonts/HelloParisSerif.woff2") format("woff2"),
-    url("fonts/HelloParisSerif.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  color: #f0e5c6;
-  font-size: 2rem;
-}
+    font-family: "Hello Paris Serif";
+    src: url("fonts/HelloParisSerif.woff2") format("woff2"),
+      url("fonts/HelloParisSerif.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+
+    font-size: 2rem;
+  }
 
   .hidden {
     display: none;
@@ -179,12 +175,12 @@
     grid-row-gap: 0px;
   }
 
-  a:link{
+  a:link {
     text-decoration: none;
   }
 
   a:hover {
-    color:rgba(70, 100, 51, 1) 0%,
+    color: rgba(70, 100, 51, 1) 0%;
   }
   /* main {
     padding: 1em;
@@ -224,7 +220,6 @@
     line-height: 1.35;
   } */
 
-  
   @media (max-width: 480px) {
     h1 {
       max-width: none;
@@ -280,7 +275,7 @@
 
   .selection h1 {
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     margin-left: auto !important;
     margin-right: auto !important;
   }
@@ -306,8 +301,6 @@
     margin-right: auto;
     display: flex;
   }
-
- 
 
   /*BASKET*/
   .total {
@@ -378,11 +371,6 @@
     margin-bottom: 0;
   }
 
-  .frame_creem_logo {
-    top: -0.5rem;
-    left: 6.6rem;
-  }
-
   /*DECORATIONS*/
 
   /*RESPONSIVE*/
@@ -393,13 +381,13 @@
       height: 100vh;
     }
 
-    .logo {
-      margin-left: 26rem !important;
-      margin-right: 26rem !important;
+    .selection h1 {
+      margin-bottom: 2rem;
     }
 
-    .frame_creem_logo {
-      left: 25.7rem;
+    .logo {
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
 
     .nav_tekst_type1 {
@@ -427,7 +415,6 @@
       background-color: #fef8e9;
     }
 
-    
     .nav_tekst_type3 {
       display: none;
     }

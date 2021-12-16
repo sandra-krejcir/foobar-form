@@ -1,24 +1,6 @@
 <script>
   import { cart } from "./theCart";
   export let sumPrice;
-
-  let cashSelected = false;
-  let mobileSelected = true;
-
-  function changeSelection () {
-  cashSelected = !cashSelected;
-  mobileSelected = !mobileSelected;
-
-  if (cashSelected) {
-    document.querySelector("#firstSelect").classList.add("coloring");
-    document.querySelector("#secondSelect").classList.remove("coloring");
-  } else if (mobileSelected) {
-    document.querySelector("#firstSelect").classList.remove("coloring");
-    document.querySelector("#secondSelect").classList.add("coloring");
-  }
-  }
- 
-  
   async function postIt() {
     document.querySelector(".payment").classList.toggle("hidden");
     document.querySelector(".thankYou").classList.toggle("hidden");
@@ -54,11 +36,15 @@
   <slot />
 </div>
 <h2>Payment Details</h2>
-<form id="theForm" on:submit|preventDefault="{postIt}">
+<form id="theForm" on:submit|preventDefault={postIt}>
   <div class="button_conatiner">
     <img class="line1" src="./lib/decorations/line3.png" alt="line3" />
-    <button class="pay_button" type="button" id="firstSelect" on:click={changeSelection}>Pay in person</button>
-    <button class="pay_button " type="button" id="secondSelect" on:click={changeSelection}>MobilePay</button>
+    <button class="pay_button" type="button" id="firstSelect"
+      >Pay in person</button
+    >
+    <button class="pay_button " type="button" id="secondSelect"
+      >MobilePay</button
+    >
     <img class="line2" src="./lib/decorations/line3.png" alt="line3" />
   </div>
   <p>Or</p>
@@ -71,7 +57,6 @@
       id="cardHolder"
       value=""
       placeholder="John Doe"
-     
       required
     />
 
@@ -126,10 +111,8 @@
 
     <p class="recept">You receive your recept via a Text</p>
     <div class="terms_container">
-      <input type="checkbox" id="terms" name="terms" value=""/>
-      <label name="terms" for="terms"
-        >I Agree to the Terms and Conditions.</label
-      >
+      <input type="checkbox" id="terms" name="terms" required value="" />
+      <label for="terms">I Agree to the Terms and Conditions.</label>
     </div>
   </div>
   <div class="total">
@@ -154,7 +137,6 @@
     justify-content: center;
   }
 
-  
   .pay_button {
     background: rgba(255, 0, 0, 0);
     color: #801b16;
@@ -163,8 +145,6 @@
     margin: 0.5rem;
     width: 15rem;
   }
-
-  
 
   form {
     display: grid;
@@ -218,8 +198,10 @@
   }
 
   .terms_container {
+    position: relative;
     display: flex;
     align-items: center;
+    z-index: 1100;
   }
 
   .total {
@@ -272,5 +254,17 @@
 
   [type="checkbox"] + label::before {
     outline: 2px solid #801b16;
+  }
+
+  [type="checkbox"]:checked + label::before {
+    outline: 2px solid #466433;
+  }
+
+  input:valid {
+    border-color: #00ff48;
+  }
+
+  input:invalid:not(:placeholder-shown, :focus) {
+    border-color: #ff0000;
   }
 </style>
