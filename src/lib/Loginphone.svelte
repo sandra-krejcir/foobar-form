@@ -26,7 +26,7 @@
         id="password_login"
         name="password_login"
         title="Must contain at least 8 or more characters"
-        placeholder="******"
+        placeholder="********"
         required
       />
 

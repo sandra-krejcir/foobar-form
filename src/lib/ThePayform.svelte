@@ -64,7 +64,7 @@
       <div>
         <label for="cardNumber">Card Number</label>
         <input
-          type="number"
+          type="tekst"
           minlength="16"
           maxlength="19"
           name="cardNumber"
@@ -91,7 +91,7 @@
       <div>
         <label for="cardCvc">CVC</label>
         <input
-          type="number"
+          type="tekst"
           minlength="3"
           maxlength="3"
           name="cardCvc"

@@ -26,12 +26,12 @@
     <div>
       <label for="password_ca">Password</label>
       <input
-        type="password_ca"
+        type="password"
         minlength="8"
         id="password_ca"
         name="password_ca"
         title="Must contain at least 8 or more characters"
-        placeholder="******"
+        placeholder="********"
         required
       />
     </div>
@@ -52,7 +52,7 @@
       <div>
         <label for="cardNumber_ca">Card Number</label>
         <input
-          type="number"
+          type="tekst"
           minlength="16"
           maxlength="19"
           name="cardNumber_ca"
@@ -79,7 +79,7 @@
       <div>
         <label for="cardCvc_ca">CVC</label>
         <input
-          type="number"
+          type="tekst"
           minlength="3"
           maxlength="3"
           name="cardCvc_ca"
