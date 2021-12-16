@@ -99,9 +99,9 @@
           <div class="line" />
         </div>
         <div class="button_container">
-          <button on:click={() => (paymentClicked = !paymentClicked)}
+        <a href="#editOrder"><button on:click={() => (paymentClicked = !paymentClicked)}
             >Proceed to checkout</button
-          >
+          ></a>
           <div class="frame" />
         </div>
       </BasketBeer>
