@@ -72,7 +72,7 @@
     <h1 class="logo">FooBar</h1>
 
     <ScrollBeer />
-    <p class="nav_tekst_type1">Edit order</p>
+    <a href="#editOrder"><p class="nav_tekst_type1">Edit order</p></a>
   </section>
 
   <section
