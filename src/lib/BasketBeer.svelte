@@ -1,15 +1,17 @@
 <script>
-  import Beer from "./Beer.svelte";
-  import { cart } from "./theCart";
+import { cart } from "./theCart";
+
+
 
   // const beerNameWithoutSpaces = beer.name.replaceAll(" ", "").toLowerCase();
   // const imageSource = `/src/lib/beerImg/${beerNameWithoutSpaces}.png`;
 </script>
 
+
 <h2>Order</h2>
 <div class="scroll">
   {#if $cart.length === 0}
-    <p class="center">* Your cart is currently empty. *</p>
+  <p class="center">* Your cart is currently empty. *</p>
   {/if}
   {#each $cart as beer}
     <div class="item_container">
@@ -40,6 +42,7 @@
                 });
               }}>+</span
             >
+            
           </div>
         </div>
         <div class="line_it_up">
@@ -74,7 +77,6 @@
 
   img {
     width: 5rem;
-    height: 5.9rem;
     margin-right: 0.5rem;
   }
 
@@ -124,6 +126,7 @@
 
   .center {
     margin-left: 5rem;
+  
   }
 
   .line {
@@ -135,11 +138,14 @@
     margin-top: 2rem;
   }
 
+ 
+
   @media only screen and (min-width: 600px) {
     .scroll {
       height: 40rem;
       overflow: scroll;
     }
+
 
     .line {
       margin-top: 2.5rem;
