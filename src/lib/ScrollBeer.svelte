@@ -79,18 +79,18 @@
   <ul class="doFlex">
     {#if fullSelection}
       {#each beersOnTapArray as beer}
-        <Beer {beer} />
+        <Beer {beer} onTap={true}/>
       {/each}
       {#each beersNotOnTapArray as beer}
         <div class="gray">
-          <Beer {beer} />
+          <Beer {beer} onTap={false} />
         </div>
       {/each}
     {/if}
 
     {#if !fullSelection}
       {#each beersOnTapArray as beer}
-        <Beer {beer} />
+        <Beer {beer} onTap={true}/>
       {/each}
     {/if}
   </ul>

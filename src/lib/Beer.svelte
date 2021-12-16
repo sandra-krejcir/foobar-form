@@ -1,6 +1,10 @@
+
 <script>
   import { cart } from "./theCart";
   export let beer;
+
+  export let onTap;
+ 
 
   let hidden = true;
   function moreInfo() {
@@ -20,6 +24,7 @@
     </div>
     <h2>{beer.name}</h2>
     <div class="tap_container">
+      {#if onTap}
       <div>
         <p>Currently</p>
         <img class="line flip" src="./lib/decorations/line.png" alt="line" />
@@ -29,6 +34,18 @@
         <p>On the Tap</p>
         <img class="line" src="./lib/decorations/line.png" alt="line" />
       </div>
+      {/if}
+      {#if !onTap}
+      <div>
+        <p>Currently</p>
+        <img class="line flip" src="./lib/decorations/line.png" alt="line" />
+      </div>
+      <img class="tap_icon" src="./lib/icons/tap.png" alt="tap icon" />
+      <div>
+        <p>Not On Tap</p>
+        <img class="line" src="./lib/decorations/line.png" alt="line" />
+      </div>
+      {/if}
     </div>
     <button class="about_button" on:click={moreInfo}>About {beer.name}</button>
     <div class:hidden>
@@ -57,6 +74,7 @@
     </div>
     <div class="banner">
       <div class="amount_container">
+        {#if onTap}
         <span
           class="click_me"
           on:click={() => {
@@ -83,6 +101,23 @@
             });
           }}>+</span
         >
+        {/if}
+        
+        {#if !onTap}
+        <span class="click_me">-</span
+        >
+        <span class="amount">
+          {#if $cart.findIndex((element) => element.name == beer.name) === -1}
+            0
+          {/if}
+          {#if $cart.findIndex((element) => element.name == beer.name) > -1}
+            {$cart[$cart.findIndex((element) => element.name == beer.name)]
+              .amount}
+          {/if}</span
+        >
+        <span class="click_me">+</span
+        >
+        {/if}
         
       </div>
       <p class="price">{#if $cart.findIndex((element) => element.name == beer.name) === -1}
