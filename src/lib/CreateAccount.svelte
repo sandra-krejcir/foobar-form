@@ -11,12 +11,14 @@
     <div>
       <label for="phoneNumber">Phone Number</label>
       <input
-        type="text"
-        minlength="15"
+        type="number"
+        minlength="8"
         maxlength="15"
         id="phoneNumber"
         name="phoneNumber"
         placeholder="+45 XX XX XX XX"
+        required
+        inputmode="numeric"
       />
     </div>
     <div>
@@ -27,6 +29,7 @@
         id="password"
         name="password"
         placeholder="*****"
+        required
       />
     </div>
     <p>Enter your card info once, and save time ordering</p>
@@ -38,40 +41,47 @@
         name="cardHolder"
         id="cardHolder"
         placeholder="John Doe"
+        required
       />
     </div>
     <div class="card_info">
       <div>
         <label for="cardNumber">Card Number</label>
         <input
-          type="text"
-          minlength="20"
+          type="number"
+          minlength="16"
           maxlength="20"
           name="cardNumber"
           id="cardNumber"
           placeholder="XXXX-XXXX-XXXX-XXXX"
+          required
+          inputmode="numeric"
         />
       </div>
       <div>
         <label for="cardExp">Expires</label>
         <input
-          type="text"
+          type="tekst"
           minlength="5"
           maxlength="5"
           name="cardExp"
           id="cardExp"
           placeholder="mm/yy"
+          required
+          inputmode="decimal"
         />
       </div>
       <div>
         <label for="cardCvc">CVC</label>
         <input
-          type="text"
+          type="number"
           minlength="3"
           maxlength="3"
           name="cardCvc"
           id="cardCvc"
           placeholder="mm/yy"
+          required
+          inputmode="numeric"
         />
       </div>
     </div>
@@ -84,8 +94,8 @@
         >
       </div>
       <div class="terms">
-        <input type="checkbox" id="terms" name="terms" />
-        <label name="terms" for="terms"
+        <input type="checkbox" id="terms_and_co" name="terms_and_co" />
+        <label name="terms_and_co" for="terms_and_co"
           >I Agree to the Terms and Conditions.</label
         >
       </div>

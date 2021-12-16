@@ -107,9 +107,7 @@
     <p class="recept">You receive your recept via a Text</p>
     <div class="terms_container">
       <input type="checkbox" id="terms" name="terms" required value="" />
-      <label name="terms" for="terms"
-        >I Agree to the Terms and Conditions.</label
-      >
+      <label for="terms">I Agree to the Terms and Conditions.</label>
     </div>
   </div>
   <div class="total">
@@ -197,8 +195,10 @@
   }
 
   .terms_container {
+    position: relative;
     display: flex;
     align-items: center;
+    z-index: 1100;
   }
 
   .total {
@@ -251,5 +251,17 @@
 
   [type="checkbox"] + label::before {
     outline: 2px solid #801b16;
+  }
+
+  [type="checkbox"]:checked + label::before {
+    outline: 2px solid #466433;
+  }
+
+  input:valid {
+    border-color: #00ff48;
+  }
+
+  input:invalid:not(:placeholder-shown, :focus) {
+    border-color: #ff0000;
   }
 </style>

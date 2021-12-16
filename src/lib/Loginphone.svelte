@@ -14,6 +14,7 @@
         id="phoneNumber"
         name="phoneNumber"
         placeholder="+45 XX XX XX XX"
+        required
       />
       <label for="password">Password</label>
       <input
@@ -22,6 +23,7 @@
         id="password"
         name="password"
         placeholder="******"
+        required
       />
 
       <div class="button_container">
