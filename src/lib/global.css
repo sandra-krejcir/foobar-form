@@ -214,6 +214,10 @@ label[for="cardCvc"],
   margin-left: 0.2rem;
 }
 
+.message {
+  display: none;
+}
+
 /* check box*/
 [type="checkbox"] {
   opacity: 0;

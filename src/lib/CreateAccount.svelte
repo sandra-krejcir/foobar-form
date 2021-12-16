@@ -9,77 +9,82 @@
   </p>
   <form>
     <div>
-      <label for="phoneNumber">Phone Number</label>
+      <label for="phoneNumber_ca">Phone Number</label>
       <input
-        type="number"
+        type="tel"
         minlength="8"
         maxlength="15"
-        id="phoneNumber"
-        name="phoneNumber"
+        id="phoneNumber_ca"
+        name="phoneNumber_ca"
+        pattern="(+)[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        title="Must contain at least 8 numberes and bo more than 15 numbers"
         placeholder="+45 XX XX XX XX"
         required
-        inputmode="numeric"
+        inputmode="tel"
       />
     </div>
     <div>
-      <label for="password">Password</label>
+      <label for="password_ca">Password</label>
       <input
-        type="password"
+        type="password_ca"
         minlength="8"
-        id="password"
-        name="password"
-        placeholder="*****"
+        id="password_ca"
+        name="password_ca"
+        title="Must contain at least 8 or more characters"
+        placeholder="******"
         required
       />
     </div>
     <p>Enter your card info once, and save time ordering</p>
     <div>
-      <label for="cardHolder">Card Holder</label>
+      <label for="cardHolder_ca">Card Holder</label>
       <input
         type="text"
         minlength="2"
-        name="cardHolder"
-        id="cardHolder"
+        name="cardHolder_ca"
+        id="cardHolder_ca"
+        pattern="^[A-Z][a-z]*(\s([A-Z]|\([A-Z])[a-z\'\(\)]*)?((\s|\-)([A-Z]|\([A-Z])[a-z\'\(\)]*)?((\s|\-)([A-Z]|\([A-Z])[a-z\'\(\)]*)?((\s|\-)([A-Z]|\([A-Z])[a-z\'\(\)]*)?$"
         placeholder="John Doe"
         required
       />
     </div>
     <div class="card_info">
       <div>
-        <label for="cardNumber">Card Number</label>
+        <label for="cardNumber_ca">Card Number</label>
         <input
           type="number"
           minlength="16"
-          maxlength="20"
-          name="cardNumber"
-          id="cardNumber"
+          maxlength="19"
+          name="cardNumber_ca"
+          id="cardNumber_ca"
           placeholder="XXXX-XXXX-XXXX-XXXX"
           required
           inputmode="numeric"
         />
       </div>
       <div>
-        <label for="cardExp">Expires</label>
+        <label for="cardExp_ca">Expires</label>
         <input
           type="tekst"
           minlength="5"
           maxlength="5"
-          name="cardExp"
-          id="cardExp"
+          name="cardExp_ca"
+          id="cardExp_ca"
           placeholder="mm/yy"
           required
           inputmode="decimal"
+          title="Must include '/' eg. 00/00"
         />
       </div>
       <div>
-        <label for="cardCvc">CVC</label>
+        <label for="cardCvc_ca">CVC</label>
         <input
           type="number"
           minlength="3"
           maxlength="3"
-          name="cardCvc"
-          id="cardCvc"
-          placeholder="mm/yy"
+          name="cardCvc_ca"
+          id="cardCvc_ca"
+          placeholder="000"
           required
           inputmode="numeric"
         />
@@ -88,14 +93,17 @@
 
     <div class="terms_news_container">
       <div class="news">
-        <input type="checkbox" id="newsletter" name="newsletter" />
-        <label name="newsletter" for="newsletter"
+        <input type="checkbox" id="newsletter_ca" name="newsletter_ca" />
+        <label name="newsletter_ca" for="newsletter_ca"
           >I want messages with special offers</label
         >
       </div>
       <div class="terms">
-        <input type="checkbox" id="terms_and_co" name="terms_and_co" />
-        <label name="terms_and_co" for="terms_and_co"
+        <input type="checkbox" id="terms_ca" name="terms_ca" required />
+        <label
+          name="terms_ca"
+          for="terms_ca"
+          title="You mesu accepts Terms and Conditions"
           >I Agree to the Terms and Conditions.</label
         >
       </div>
@@ -139,27 +147,27 @@
     grid-template-columns: 12rem 4rem 2.7rem;
   }
 
-  #cardNumber {
+  #cardNumber_ca {
     width: 11rem;
     padding-left: 0.3rem;
     padding-right: 0.3rem;
   }
 
-  #cardExp {
+  #cardExp_ca {
     width: 3rem;
     padding-left: 0.3rem;
     padding-right: 0.3rem;
   }
 
-  #cardCvc {
+  #cardCvc_ca {
     width: 1.7rem;
     padding-left: 0.3rem;
     padding-right: 0.3rem;
   }
 
-  #cardHolder,
-  #phoneNumber,
-  #password {
+  #cardHolder_ca,
+  #phoneNumber_ca,
+  #password_ca {
     width: 16.5rem;
   }
 
