@@ -262,7 +262,7 @@ label[for="cardCvc"],
   border-radius: 100%;
   left: 8px;
   top: 8px;
-  background-image: url(./lib/icons/check.png);
+  background-image: url("./lib/icons/check.png");
   background-size: contain;
 }
 
