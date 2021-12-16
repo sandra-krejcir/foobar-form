@@ -46,24 +46,16 @@
     fullSelection = !fullSelection;
     allSelected = !allSelected;
     tapSelected = !tapSelected;
-
-    if (allSelected) {
-      document.querySelector("#firstSelect").classList.add("line");
-      document.querySelector("#secondSelect").classList.remove("line");
-    } else if (tapSelected) {
-      document.querySelector("#firstSelect").classList.remove("line");
-      document.querySelector("#secondSelect").classList.add("line");
-    }
   }
 </script>
 
 <div>
   <span />
   <ul class="firstFilter">
-    <li class="click_me" id="firstSelect" on:click={changeSelection}>
+    <li class:line={allSelected} id="firstSelect" on:click={changeSelection}>
       Full selection
     </li>
-    <li class="click_me line" id="secondSelect" on:click={changeSelection}>
+    <li class:line={tapSelected} id="secondSelect" on:click={changeSelection}>
       On today's tap
     </li>
   </ul>
